@@ -1,0 +1,4 @@
+Sitemap: https://binnacle.github.io/sitemapindex.xml
+
+User-Agent: *
+Host: binnacle.github.io

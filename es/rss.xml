@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Binnacle</title><link>https://binnacle.github.io/</link><description>Hey, here my (public) binnacle point.</description><atom:link href="https://binnacle.github.io/es/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2020 &lt;a href="mailto:psicotherapy@gmail.com"&gt;Txe Llenne&lt;/a&gt; </copyright><lastBuildDate>Sat, 24 Oct 2020 19:43:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>On generating JSON content from EMACS</title><link>https://binnacle.github.io/es/posts/on-generating-json-content-from-emacs/</link><dc:creator>Txe Llenne</dc:creator><description>&lt;div id="outline-container-orgead76bd" class="outline-2"&gt;
+&lt;h2 id="orgead76bd"&gt;Context&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgead76bd"&gt;
+&lt;p&gt;
+Hi, probably this post work for someone else. I wanted to gain literacy in ASP.NET development but got stuck at &lt;a href="https://channel9.msdn.com/Series/ASPNET-Core-101/ASPNET-Enhancing-your-Web-API-Part-2-9-of-13"&gt;episode 9 of 13, 'Enhancing your Web API'&lt;/a&gt;, of 'What is ASP.NET' tutorial series when at trying to generate a json file to feed my web application project with content. So after have a read through the json.el library I came up with the following helper functions, not sure about there is better way of doing it as once done I still have to wrap the result with '[' and ']' (as I couldn't manage to make concatenate it) I would appreciate any comment. Here it goes:
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org49064a6" class="outline-2"&gt;
+&lt;h2 id="org49064a6"&gt;Step One, the Expected Output&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org49064a6"&gt;
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;&lt;p&gt;
+As seen on the screenshoot:
+&lt;img src="https://binnacle.github.io/posts/on-generating-json-content-from-emacs/images/episode9-of-13-json-for-web-api.png" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+but my SPA goes about fruits and vegetables items, so following the structure show below:
+&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[
+ {
+ "id" : "item",
+ "img": "path-name.png|jpg",
+ "info": "wolframalphaLink",
+ },
+ {..
+ ..},
+ {..
+ ..},
+ ... 
+ ]
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+In order to call my object list easily, lets set a variable 'fruts':
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;fruts&lt;/span&gt; &lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;beetroots&lt;/span&gt; &lt;span class="nv"&gt;carrots&lt;/span&gt; &lt;span class="nv"&gt;cucumber&lt;/span&gt; &lt;span class="nv"&gt;celery&lt;/span&gt; &lt;span class="nv"&gt;cougette&lt;/span&gt; &lt;span class="nv"&gt;kale&lt;/span&gt; &lt;span class="nv"&gt;apple&lt;/span&gt; &lt;span class="nv"&gt;kiwifruit&lt;/span&gt;
+	       &lt;span class="nv"&gt;avocado&lt;/span&gt; &lt;span class="nv"&gt;lemon&lt;/span&gt; &lt;span class="nv"&gt;pepper&lt;/span&gt; &lt;span class="nv"&gt;garlic&lt;/span&gt; &lt;span class="nv"&gt;ginger&lt;/span&gt; &lt;span class="nv"&gt;sweet&lt;/span&gt; &lt;span class="nv"&gt;potatoes&lt;/span&gt; &lt;span class="nv"&gt;banana&lt;/span&gt; &lt;span class="nv"&gt;orange&lt;/span&gt;
+	       &lt;span class="nv"&gt;mandarin&lt;/span&gt; &lt;span class="nv"&gt;blackberry&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org653e8b5" class="outline-2"&gt;
+&lt;h2 id="org653e8b5"&gt;Step Two, lets generate the block code for every item in my object list&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org653e8b5"&gt;
+&lt;p&gt;
+In order to generate the data block for every item
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;foo-objs-list&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;mapcar&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+	    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;split-string&lt;/span&gt;
+	     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;format&lt;/span&gt; &lt;span class="s"&gt;"id %s img img/%s info https://www.wolframalpha.com/input/?i=%s"&lt;/span&gt;
+				  &lt;span class="nv"&gt;i&lt;/span&gt; &lt;span class="nv"&gt;i&lt;/span&gt; &lt;span class="nv"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt; &lt;span class="nv"&gt;x&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org9fd7d4c" class="outline-2"&gt;
+&lt;h2 id="org9fd7d4c"&gt;Step Three, Now lets encode every item block in json terms.&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org9fd7d4c"&gt;
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;In order to mapcar every block in json terms:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;foo-encoding-objs-list&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;mapcar&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+	    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;insert&lt;/span&gt;
+	     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;format&lt;/span&gt; &lt;span class="s"&gt;"%s,"&lt;/span&gt;
+		     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;json-encode-plist&lt;/span&gt; &lt;span class="nv"&gt;i&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+	  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;foo-objs-list&lt;/span&gt; &lt;span class="nv"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org5937326" class="outline-2"&gt;
+&lt;h2 id="org5937326"&gt;Step Four, Just use it!&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5937326"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;foo-encoding-objs-list&lt;/span&gt; &lt;span class="nv"&gt;fruts&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;Or the version combining both preceding functions in one:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defun&lt;/span&gt; &lt;span class="nv"&gt;foo-encoding-objs-list-version-all-together&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;mapcar&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+	     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;insert&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;format&lt;/span&gt; &lt;span class="s"&gt;"%s,"&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;json-encode-plist&lt;/span&gt; &lt;span class="nv"&gt;i&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+	   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;mapcar&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+		     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;split-string&lt;/span&gt;
+		      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;format&lt;/span&gt;
+		       &lt;span class="s"&gt;"id %s img img/%s info https://www.wolframalpha.com/input/?i=%s "&lt;/span&gt;
+			      &lt;span class="nv"&gt;i&lt;/span&gt; &lt;span class="nv"&gt;i&lt;/span&gt; &lt;span class="nv"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt; &lt;span class="nv"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><guid>https://binnacle.github.io/es/posts/on-generating-json-content-from-emacs/</guid><pubDate>Sat, 24 Oct 2020 19:14:31 GMT</pubDate></item></channel></rss>

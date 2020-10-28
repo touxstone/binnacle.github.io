@@ -37,9 +37,7 @@ Hi, probably this post work for someone else. I wanted to gain literacy in ASP.N
 In order to call my object list easily, lets set a variable 'fruts':
 #+ATTR_HTML: :style background-color:#eff0f1;
 #+BEGIN_SRC emacs-lisp
-(setq fruts '(beetroots carrots cucumber celery cougette kale apple kiwifruit
-               avocado lemon pepper garlic ginger sweet potatoes banana orange
-               mandarin blackberry))
+(setq fruts '(beetroots carrots cucumber celery cougette kale apple kiwifruit avocado lemon pepper garlic ginger sweet potatoes banana orange mandarin blackberry))
 #+END_SRC
 
 * Step Two, lets generate the block code for every item in my object list
@@ -48,8 +46,7 @@ In order to generate the data block for every item
 (defun foo-objs-list (x)
   (mapcar (lambda (i)
             (split-string
-             (format "id %s img img/%s info https://www.wolframalpha.com/input/?i=%s"
-                                  i i i))) x))
+             (format "id %s img img/%s info https://www.wolframalpha.com/input/?i=%s" i i i))) x))
 #+END_SRC
 
 * Step Three, Now lets encode every item block in json terms.

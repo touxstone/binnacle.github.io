@@ -158,7 +158,9 @@ NAVIGATION_ALT_LINKS = {
 }
 
 # Name of the theme to use.
-THEME = "bootblog4"
+#THEME = "bootblog4"
+THEME = "hyde"
+
 
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.
@@ -909,7 +911,7 @@ IMAGE_FOLDERS = {'images': 'images'}
 # Check with list(pygments.styles.get_all_styles()) in an interpreter.
 #
 # CODE_COLOR_SCHEME = 'default'
-
+CODE_COLOR_SCHEME = 'solarized-dark'
 # FAVICONS contains (name, file, size) tuples.
 # Used to create favicon link like this:
 # <link rel="name" href="file" sizes="size"/>

@@ -1,4 +1,4 @@
-Sitemap: https://binnacle.github.io/sitemapindex.xml
+Sitemap: https://touxstone.github.io/binnacle.github.io/sitemapindex.xml
 
 User-Agent: *
-Host: binnacle.github.io
+Host: touxstone.github.io

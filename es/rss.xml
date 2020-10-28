@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Binnacle</title><link>https://binnacle.github.io/</link><description>Hey, here my (public) binnacle point.</description><atom:link href="https://binnacle.github.io/es/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2020 &lt;a href="mailto:psicotherapy@gmail.com"&gt;Txe Llenne&lt;/a&gt; </copyright><lastBuildDate>Wed, 28 Oct 2020 13:07:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>On generating JSON content from EMACS</title><link>https://binnacle.github.io/es/posts/on-generating-json-content-from-emacs/</link><dc:creator>Txe Llenne</dc:creator><description>&lt;div id="outline-container-org6dc073d" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Binnacle</title><link>https://touxstone.github.io/binnacle.github.io/</link><description>Hey, here my (public) binnacle point.</description><atom:link href="https://touxstone.github.io/binnacle.github.io/es/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2020 &lt;a href="mailto:psicotherapy@gmail.com"&gt;Txe Llenne&lt;/a&gt; </copyright><lastBuildDate>Wed, 28 Oct 2020 17:12:06 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>On generating JSON content from EMACS</title><link>https://touxstone.github.io/binnacle.github.io/es/posts/on-generating-json-content-from-emacs/</link><dc:creator>Txe Llenne</dc:creator><description>&lt;div id="outline-container-org6dc073d" class="outline-2"&gt;
 &lt;h2 id="org6dc073d"&gt;Context&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org6dc073d"&gt;
 &lt;p&gt;
@@ -13,7 +13,7 @@ Hi, probably this post work for someone else. I wanted to gain literacy in ASP.N
 &lt;ol class="org-ol"&gt;
 &lt;li&gt;&lt;p&gt;
 As seen on the screenshoot:
-&lt;img src="https://binnacle.github.io/es/posts/on-generating-json-content-from-emacs/images/episode9-of-13-json-for-web-api.png" alt="nil"&gt;
+&lt;img src="https://touxstone.github.io/binnacle.github.io/es/posts/on-generating-json-content-from-emacs/images/episode9-of-13-json-for-web-api.png" alt="nil"&gt;
 &lt;/p&gt;
 
 &lt;p&gt;
@@ -92,4 +92,4 @@ In order to generate the data block for every item
 			      &lt;span class="nv"&gt;i&lt;/span&gt; &lt;span class="nv"&gt;i&lt;/span&gt; &lt;span class="nv"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt; &lt;span class="nv"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><guid>https://binnacle.github.io/es/posts/on-generating-json-content-from-emacs/</guid><pubDate>Sat, 24 Oct 2020 19:14:31 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><guid>https://touxstone.github.io/binnacle.github.io/es/posts/on-generating-json-content-from-emacs/</guid><pubDate>Sat, 24 Oct 2020 19:14:31 GMT</pubDate></item></channel></rss>

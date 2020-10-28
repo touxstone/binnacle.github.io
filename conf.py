@@ -20,7 +20,7 @@ BLOG_AUTHOR = "Txe Llenne"  # (translatable)
 BLOG_TITLE = "Binnacle"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
-SITE_URL = "https://binnacle.github.io/"
+SITE_URL = "https://touxstone.github.io/binnacle.github.io/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://binnacle.github.io/"
@@ -911,7 +911,7 @@ IMAGE_FOLDERS = {'images': 'images'}
 # Check with list(pygments.styles.get_all_styles()) in an interpreter.
 #
 # CODE_COLOR_SCHEME = 'default'
-CODE_COLOR_SCHEME = 'solarized-dark'
+
 # FAVICONS contains (name, file, size) tuples.
 # Used to create favicon link like this:
 # <link rel="name" href="file" sizes="size"/>

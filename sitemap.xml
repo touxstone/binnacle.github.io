@@ -15,7 +15,7 @@
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/archive.html</loc>
-  <lastmod>2020-10-28T19:31:00Z</lastmod>
+  <lastmod>2020-11-09T17:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/categories/</loc>
@@ -31,7 +31,7 @@
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/archive.html</loc>
-  <lastmod>2020-10-28T19:31:00Z</lastmod>
+  <lastmod>2020-11-09T17:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/categories/</loc>
@@ -40,6 +40,11 @@
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/galleries/</loc>
   <lastmod>2020-10-24T18:49:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/es/posts/la-cita/</loc>
+  <lastmod>2020-11-09T17:39:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://touxstone.github.io/binnacle.github.io/posts/la-cita/" />
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/posts/on-generating-json-content-from-emacs/</loc>
@@ -53,6 +58,10 @@
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/listings/</loc>
   <lastmod>2020-10-24T18:49:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/posts/la-cita/</loc>
+  <lastmod>2020-11-09T17:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/posts/on-generating-json-content-from-emacs/</loc>

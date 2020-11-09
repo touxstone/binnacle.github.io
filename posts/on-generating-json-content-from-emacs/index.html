@@ -14,6 +14,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../es/rss.xml">
 <link rel="canonical" href="https://touxstone.github.io/binnacle.github.io/posts/on-generating-json-content-from-emacs/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Txe Llenne">
+<link rel="next" href="../la-cita/" title="La Cita" type="text/html">
 <link rel="alternate" hreflang="es" href="../../es/posts/on-generating-json-content-from-emacs/">
 </head>
 <body class="">
@@ -58,17 +59,17 @@
     
 
     <div class="e-content entry-content" itemprop="articleBody text">
-    <div id="outline-container-orgca449dc" class="outline-2">
-<h2 id="orgca449dc">Context</h2>
-<div class="outline-text-2" id="text-orgca449dc">
+    <div id="outline-container-org927d189" class="outline-2">
+<h2 id="org927d189">Context</h2>
+<div class="outline-text-2" id="text-org927d189">
 <p>
 Hi, probably this post work for someone else. I wanted to gain literacy in ASP.NET development but got stuck at <a href="https://channel9.msdn.com/Series/ASPNET-Core-101/ASPNET-Enhancing-your-Web-API-Part-2-9-of-13">episode 9 of 13, 'Enhancing your Web API'</a>, of 'What is ASP.NET' tutorial series when at trying to generate a json file to feed my web application project with content. So after have a read through the json.el library I came up with the following helper functions, not sure about there is better way of doing it as once done I still have to wrap the result with '[' and ']' (as I couldn't manage to make concatenate it) I would appreciate any comment. Here it goes:
 </p>
 </div>
 </div>
-<div id="outline-container-org4f29c1c" class="outline-2">
-<h2 id="org4f29c1c">Step One, the Expected Output</h2>
-<div class="outline-text-2" id="text-org4f29c1c">
+<div id="outline-container-orgbd10dc4" class="outline-2">
+<h2 id="orgbd10dc4">Step One, the Expected Output</h2>
+<div class="outline-text-2" id="text-orgbd10dc4">
 <ol class="org-ol">
 <li>
 <p>
@@ -102,9 +103,9 @@ In order to call my object list easily, lets set a variable 'fruts':
 </div>
 </div>
 
-<div id="outline-container-orgec367c7" class="outline-2">
-<h2 id="orgec367c7">Step Two, lets generate the block code for every item in my object list</h2>
-<div class="outline-text-2" id="text-orgec367c7">
+<div id="outline-container-orgab183d7" class="outline-2">
+<h2 id="orgab183d7">Step Two, lets generate the block code for every item in my object list</h2>
+<div class="outline-text-2" id="text-orgab183d7">
 <p>
 In order to generate the data block for every item
 </p>
@@ -116,9 +117,9 @@ In order to generate the data block for every item
 </div>
 </div>
 
-<div id="outline-container-org723fd6b" class="outline-2">
-<h2 id="org723fd6b">Step Three, Now lets encode every item block in json terms.</h2>
-<div class="outline-text-2" id="text-org723fd6b">
+<div id="outline-container-orge03a62c" class="outline-2">
+<h2 id="orge03a62c">Step Three, Now lets encode every item block in json terms.</h2>
+<div class="outline-text-2" id="text-orge03a62c">
 <ol class="org-ol">
 <li>In order to mapcar every block in json terms:</li>
 </ol>
@@ -132,9 +133,9 @@ In order to generate the data block for every item
 </div>
 </div>
 
-<div id="outline-container-orgc71ec3f" class="outline-2">
-<h2 id="orgc71ec3f">Step Four, Just use it!</h2>
-<div class="outline-text-2" id="text-orgc71ec3f">
+<div id="outline-container-orgf3a9e3d" class="outline-2">
+<h2 id="orgf3a9e3d">Step Four, Just use it!</h2>
+<div class="outline-text-2" id="text-orgf3a9e3d">
 <div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">foo-encoding-objs-list</span> <span class="nv">fruts</span><span class="p">)</span>
 </pre></div>
 
@@ -154,7 +155,22 @@ In order to generate the data block for every item
 </div>
 </div>
     </div>
-    <aside class="postpromonav"><nav></nav></aside></article>
+    <aside class="postpromonav"><nav><div class="pager hidden-print pagination">
+
+            <span class="previous pagination-item older">
+                Previous post
+            </span>
+
+
+            <span class="next pagination-item newer">
+                <a href="../la-cita/" rel="next" title="La Cita">
+Next post
+              </a>
+            </span>
+
+        </div>
+
+    </nav></aside></article>
 </div>
             <script src="../../assets/js/all-nocdn.js"></script><script>
     baguetteBox.run('div#content', {

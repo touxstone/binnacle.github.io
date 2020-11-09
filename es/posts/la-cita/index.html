@@ -3,18 +3,19 @@
 " lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="description" content="Hey, here my (public) binnacle point.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Binnacle</title>
-<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<title>Binnacle · La Cita </title>
+<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,200,100,700,300,500,600,800">
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700%7CAbril+Fatface">
 <meta content="#5670d4" name="theme-color">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="rss.xml">
-<link rel="canonical" href="https://touxstone.github.io/binnacle.github.io/es/">
-<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]-->
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
+<link rel="canonical" href="https://touxstone.github.io/binnacle.github.io/es/posts/la-cita/">
+<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Txe Llenne">
+<link rel="prev" href="../on-generating-json-content-from-emacs/" title="On generating JSON content from EMACS" type="text/html">
+<link rel="alternate" hreflang="en" href="../../../posts/la-cita/">
 </head>
 <body class="">
     <a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
@@ -34,9 +35,9 @@
                 <p class="lead">Hey, here my (public) binnacle point.</p>
 
             </div>
-                <nav id="menu" role="navigation" class="sidebar-nav"><a class="sidebar-nav-item" href="archive.html">Archivo</a>
-        <a class="sidebar-nav-item" href="categories/">Etiquetas</a>
-        <a class="sidebar-nav-item" href="rss.xml">Canal RSS</a>
+                <nav id="menu" role="navigation" class="sidebar-nav"><a class="sidebar-nav-item" href="../../archive.html">Archivo</a>
+        <a class="sidebar-nav-item" href="../../categories/">Etiquetas</a>
+        <a class="sidebar-nav-item" href="../../rss.xml">Canal RSS</a>
     
     
     </nav><footer id="footer"><span class="copyright">
@@ -49,13 +50,15 @@
     </div>
 
     <div class="content container" id="content">
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><h1 class="post-title p-name"><a href="." class="u-url">La Cita</a></h1>
+
+    <span class="post-date">
+      <time class="published dt-published" datetime="2020-11-09T17:37:27Z" itemprop="datePublished" title="2020-11-09 17:37">2020-11-09 17:37</time></span>
+
     
-<div class="post">
-    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/la-cita/" class="u-url">La Cita</a></h1>
-        <div class="metadata">
-            <span class="post-date dateline"><time class="published dt-published" datetime="2020-11-09T17:37:27Z" title="2020-11-09 17:37">2020-11-09 17:37</time></span>
-        </div>
-    </header><div class="e-content entry-content">
+    
+
+    <div class="e-content entry-content" itemprop="articleBody text">
     <p>
 Sobre la contradicción.
 </p>
@@ -178,114 +181,24 @@ Volviendo al experimento de observar al observador: como observador, observo que
 Tanto en la historia como en la vida concreta de toda persona se manifiesta esta física. La organización de la sociedad sin embargo no tiene en cuenta esta relación. La destruye, la animaliza, la vigila. Incluso la comprende en su contra, para allanarla como cualquier &lt;nicho&gt; de mercado.
 </p>
     </div>
-    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/on-generating-json-content-from-emacs/" class="u-url">On generating JSON content from EMACS</a></h1>
-        <div class="metadata">
-            <span class="post-date dateline"><time class="published dt-published" datetime="2020-10-24T20:14:31+01:00" title="2020-10-24 20:14">2020-10-24 20:14</time></span>
+    <aside class="postpromonav"><nav><div class="pager hidden-print pagination">
+
+            <span class="previous pagination-item older">
+                <a href="../on-generating-json-content-from-emacs/" rel="prev" title="On generating JSON content from EMACS">
+                Publicación anterior
+                </a>
+            </span>
+
+
+            <span class="next pagination-item newer">
+Siguiente publicación
+            </span>
+
         </div>
-    </header><div class="e-content entry-content">
-    <div id="outline-container-org927d189" class="outline-2">
-<h2 id="org927d189">Context</h2>
-<div class="outline-text-2" id="text-org927d189">
-<p>
-Hi, probably this post work for someone else. I wanted to gain literacy in ASP.NET development but got stuck at <a href="https://channel9.msdn.com/Series/ASPNET-Core-101/ASPNET-Enhancing-your-Web-API-Part-2-9-of-13">episode 9 of 13, 'Enhancing your Web API'</a>, of 'What is ASP.NET' tutorial series when at trying to generate a json file to feed my web application project with content. So after have a read through the json.el library I came up with the following helper functions, not sure about there is better way of doing it as once done I still have to wrap the result with '[' and ']' (as I couldn't manage to make concatenate it) I would appreciate any comment. Here it goes:
-</p>
-</div>
-</div>
-<div id="outline-container-orgbd10dc4" class="outline-2">
-<h2 id="orgbd10dc4">Step One, the Expected Output</h2>
-<div class="outline-text-2" id="text-orgbd10dc4">
-<ol class="org-ol">
-<li>
-<p>
-As seen on the screenshoot:
-<img src="images/episode9-of-13-json-for-web-api.png" alt="nil"></p>
 
-<p>
-but my SPA goes about fruits and vegetables items, so following the structure show below:
-</p>
-</li>
-</ol>
-<div class="highlight"><pre><span></span>[
- {
- "id" : "item",
- "img": "path-name.png|jpg",
- "info": "wolframalphaLink",
- },
- {..
- ..},
- {..
- ..},
- ... 
- ]
-</pre></div>
-
-<p>
-In order to call my object list easily, lets set a variable 'fruts':
-</p>
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">setq</span> <span class="nv">fruts</span> <span class="o">'</span><span class="p">(</span><span class="nv">beetroots</span> <span class="nv">carrots</span> <span class="nv">cucumber</span> <span class="nv">celery</span> <span class="nv">cougette</span> <span class="nv">kale</span> <span class="nv">apple</span> <span class="nv">kiwifruit</span> <span class="nv">avocado</span> <span class="nv">lemon</span> <span class="nv">pepper</span> <span class="nv">garlic</span> <span class="nv">ginger</span> <span class="nv">sweet</span> <span class="nv">potatoes</span> <span class="nv">banana</span> <span class="nv">orange</span> <span class="nv">mandarin</span> <span class="nv">blackberry</span><span class="p">))</span>
-</pre></div>
+    </nav></aside></article>
 </div>
-</div>
-
-<div id="outline-container-orgab183d7" class="outline-2">
-<h2 id="orgab183d7">Step Two, lets generate the block code for every item in my object list</h2>
-<div class="outline-text-2" id="text-orgab183d7">
-<p>
-In order to generate the data block for every item
-</p>
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">defun</span> <span class="nv">foo-objs-list</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span>
-  <span class="p">(</span><span class="nf">mapcar</span> <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">i</span><span class="p">)</span>
-	    <span class="p">(</span><span class="nf">split-string</span>
-	     <span class="p">(</span><span class="nf">format</span> <span class="s">"id %s img img/%s info https://www.wolframalpha.com/input/?i=%s"</span> <span class="nv">i</span> <span class="nv">i</span> <span class="nv">i</span><span class="p">)))</span> <span class="nv">x</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-orge03a62c" class="outline-2">
-<h2 id="orge03a62c">Step Three, Now lets encode every item block in json terms.</h2>
-<div class="outline-text-2" id="text-orge03a62c">
-<ol class="org-ol">
-<li>In order to mapcar every block in json terms:</li>
-</ol>
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">defun</span> <span class="nv">foo-encoding-objs-list</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span>
-  <span class="p">(</span><span class="nf">mapcar</span> <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">i</span><span class="p">)</span>
-	    <span class="p">(</span><span class="nf">insert</span>
-	     <span class="p">(</span><span class="nf">format</span> <span class="s">"%s,"</span>
-		     <span class="p">(</span><span class="nf">json-encode-plist</span> <span class="nv">i</span><span class="p">))))</span>
-	  <span class="p">(</span><span class="nf">foo-objs-list</span> <span class="nv">x</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-
-<div id="outline-container-orgf3a9e3d" class="outline-2">
-<h2 id="orgf3a9e3d">Step Four, Just use it!</h2>
-<div class="outline-text-2" id="text-orgf3a9e3d">
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">foo-encoding-objs-list</span> <span class="nv">fruts</span><span class="p">)</span>
-</pre></div>
-
-
-<ol class="org-ol">
-<li>Or the version combining both preceding functions in one:</li>
-</ol>
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">defun</span> <span class="nv">foo-encoding-objs-list-version-all-together</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span>
-   <span class="p">(</span><span class="nf">mapcar</span> <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">i</span><span class="p">)</span>
-	     <span class="p">(</span><span class="nf">insert</span> <span class="p">(</span><span class="nf">format</span> <span class="s">"%s,"</span> <span class="p">(</span><span class="nf">json-encode-plist</span> <span class="nv">i</span><span class="p">))))</span>
-	   <span class="p">(</span><span class="nf">mapcar</span> <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">i</span><span class="p">)</span>
-		     <span class="p">(</span><span class="nf">split-string</span>
-		      <span class="p">(</span><span class="nf">format</span>
-		       <span class="s">"id %s img img/%s info https://www.wolframalpha.com/input/?i=%s "</span>
-			      <span class="nv">i</span> <span class="nv">i</span> <span class="nv">i</span><span class="p">)))</span> <span class="nv">x</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-    </div>
-    </article>
-</div>
-
-
-
-    </div>
-            <script src="../assets/js/all-nocdn.js"></script><script>
+            <script src="../../../assets/js/all-nocdn.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {

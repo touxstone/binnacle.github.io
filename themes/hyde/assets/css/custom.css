@@ -1,0 +1,14 @@
+/* ToC */
+   #table-of-contents {
+   float: right;
+   padding: 0 1rem 1rem 1rem;
+   border-left: 1px solid #eee;
+   font-size: 0.9rem;
+  }
+   nav#table-of-contents h2 {
+   padding-bottom: 0.25rem;
+  }
+  .toc-label {
+   font-size: 0.8rem;
+   color: #aeaeae;
+   }

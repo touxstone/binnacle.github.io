@@ -44,7 +44,6 @@
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/posts/la-cita/</loc>
   <lastmod>2020-11-09T17:39:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="https://touxstone.github.io/binnacle.github.io/posts/la-cita/" />
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/posts/on-generating-json-content-from-emacs/</loc>
@@ -62,6 +61,7 @@
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/posts/la-cita/</loc>
   <lastmod>2020-11-09T17:39:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="https://touxstone.github.io/binnacle.github.io/es/posts/la-cita/" />
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/posts/on-generating-json-content-from-emacs/</loc>

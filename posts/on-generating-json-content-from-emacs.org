@@ -13,10 +13,12 @@
 
 
 * Context 
-Hi, probably this post work for someone else. I wanted to gain literacy in ASP.NET development but got stuck at [[https://channel9.msdn.com/Series/ASPNET-Core-101/ASPNET-Enhancing-your-Web-API-Part-2-9-of-13][episode 9 of 13, 'Enhancing your Web API']], of 'What is ASP.NET' tutorial series when at trying to generate a json file to feed my web application project with content. So after have a read through the json.el library I came up with the following helper functions, not sure about there is better way of doing it as once done I still have to wrap the result with '[' and ']' (as I couldn't manage to make concatenate it) I would appreciate any comment. Here it goes:
+Hi, probably this post work for someone else. I wanted to gain literacy in ASP.NET development but got stuck at
+{{{TEASER_END}}}
+[[https://channel9.msdn.com/Series/ASPNET-Core-101/ASPNET-Enhancing-your-Web-API-Part-2-9-of-13][episode 9 of 13, 'Enhancing your Web API']], of 'What is ASP.NET' tutorial series when at trying to generate a json file to feed my web application project with content. So after have a read through the json.el library I came up with the following helper functions, not sure about there is better way of doing it as once done I still have to wrap the result with '[' and ']' (as I couldn't manage to make concatenate it) I would appreciate any comment. Here it goes:
 * Step One, the Expected Output
 1. As seen on the screenshoot:
-   [[../images/episode9-of-13-json-for-web-api.png]]
+[[img-url:/images/episode9-of-13-json-for-web-api.png]]
 
    but my SPA goes about fruits and vegetables items, so following the structure show below:
 #+BEGIN_SRC 

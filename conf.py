@@ -922,7 +922,7 @@ CODE_COLOR_SCHEME = 'solarized-dark'
 
 # Show teasers (instead of full posts) in indexes? Defaults to False.
 # INDEX_TEASERS = False
-
+INDEX_TEASERS = True
 # HTML fragments with the Read more... links.
 # The following tags exist and are replaced for you:
 # {link}                        A link to the full post page.

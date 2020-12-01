@@ -7,64 +7,89 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/</loc>
-  <lastmod>2020-10-24T19:43:00Z</lastmod>
+  <lastmod>2020-12-01T18:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/2020/</loc>
-  <lastmod>2020-10-24T19:43:00Z</lastmod>
+  <lastmod>2020-12-01T18:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/archive.html</loc>
-  <lastmod>2020-11-09T17:39:00Z</lastmod>
+  <lastmod>2020-12-01T18:50:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/categories/</loc>
-  <lastmod>2020-10-24T18:49:00Z</lastmod>
+  <lastmod>2020-12-01T18:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/</loc>
-  <lastmod>2020-10-24T19:43:00Z</lastmod>
+  <lastmod>2020-12-01T18:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/2020/</loc>
-  <lastmod>2020-10-24T19:43:00Z</lastmod>
+  <lastmod>2020-12-01T18:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/archive.html</loc>
-  <lastmod>2020-11-09T17:39:00Z</lastmod>
+  <lastmod>2020-12-01T18:50:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/categories/</loc>
-  <lastmod>2020-10-24T18:49:00Z</lastmod>
+  <lastmod>2020-12-01T18:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/galleries/</loc>
-  <lastmod>2020-10-24T18:49:00Z</lastmod>
+  <lastmod>2020-12-01T17:07:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/es/posts/four-try-test/</loc>
+  <lastmod>2020-12-01T18:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/posts/la-cita/</loc>
-  <lastmod>2020-11-09T17:39:00Z</lastmod>
+  <lastmod>2020-12-01T18:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/es/posts/manual-para-peque%C3%B1os-guerreros/</loc>
+  <lastmod>2020-12-01T18:44:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://touxstone.github.io/binnacle.github.io/posts/manual-para-peque%C3%B1os-guerreros/" />
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/posts/on-generating-json-content-from-emacs/</loc>
-  <lastmod>2020-10-24T19:43:00Z</lastmod>
+  <lastmod>2020-12-01T18:44:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://touxstone.github.io/binnacle.github.io/posts/on-generating-json-content-from-emacs/" />
  </url>
  <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/es/posts/without-options/</loc>
+  <lastmod>2020-12-01T18:44:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://touxstone.github.io/binnacle.github.io/galleries/</loc>
-  <lastmod>2020-10-24T18:49:00Z</lastmod>
+  <lastmod>2020-12-01T17:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/listings/</loc>
-  <lastmod>2020-10-24T18:49:00Z</lastmod>
+  <lastmod>2020-12-01T16:57:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/posts/four-try-test/</loc>
+  <lastmod>2020-12-01T18:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/posts/la-cita/</loc>
-  <lastmod>2020-11-09T17:39:00Z</lastmod>
+  <lastmod>2020-12-01T18:44:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="es" href="https://touxstone.github.io/binnacle.github.io/es/posts/la-cita/" />
  </url>
  <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/posts/manual-para-peque%C3%B1os-guerreros/</loc>
+  <lastmod>2020-12-01T18:44:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://touxstone.github.io/binnacle.github.io/posts/on-generating-json-content-from-emacs/</loc>
-  <lastmod>2020-10-28T15:19:00Z</lastmod>
+  <lastmod>2020-12-01T18:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/posts/without-options/</loc>
+  <lastmod>2020-12-01T18:44:00Z</lastmod>
  </url>
 </urlset>

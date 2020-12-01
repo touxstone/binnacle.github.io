@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Binnacle</title><link>https://touxstone.github.io/binnacle.github.io/</link><description>Hey, here my (public) binnacle point.</description><atom:link href="https://touxstone.github.io/binnacle.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:psicotherapy@gmail.com"&gt;Txe Llenne&lt;/a&gt; </copyright><lastBuildDate>Tue, 10 Nov 2020 10:02:26 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>La Cita</title><link>https://touxstone.github.io/binnacle.github.io/posts/la-cita/</link><dc:creator>Txe Llenne</dc:creator><description>&lt;div&gt;&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Binnacle</title><link>https://touxstone.github.io/binnacle.github.io/</link><description>Hey, here my (public) binnacle point.</description><atom:link href="https://touxstone.github.io/binnacle.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:psicotherapy@gmail.com"&gt;Txe Llenne&lt;/a&gt; </copyright><lastBuildDate>Tue, 01 Dec 2020 19:22:07 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Manual Para Pequeños Guerreros</title><link>https://touxstone.github.io/binnacle.github.io/posts/manual-para-peque%C3%B1os-guerreros/</link><dc:creator>Txe Llenne</dc:creator><description>&lt;div&gt;&lt;p&gt;
+Anotaciones para un preámbulo. &lt;br&gt;
+No es curiosidad fútil rastrear el punto aquel en que los diálogos del niño pasan a ser asunto adulto y está claro que admitimos que no lo sea. Por no faltar abunda bibliografía. Unos mirarán en un aspecto u otro. Los diálogos frente al marshmallow dirán unos, para evaluar el autocontrol cual hipótesis de clave. Otros preferirán merodear en el salto lógico, y menciono aquí ese que llaman pensamiento dizque marciano y creativamente traman por cierta objetividad que presentan tal que punto de llegada. Aunque todos sepamos,
+&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://touxstone.github.io/binnacle.github.io/posts/manual-para-peque%C3%B1os-guerreros/"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><guid>https://touxstone.github.io/binnacle.github.io/posts/manual-para-peque%C3%B1os-guerreros/</guid><pubDate>Tue, 01 Dec 2020 18:55:14 GMT</pubDate></item><item><title>La Cita</title><link>https://touxstone.github.io/binnacle.github.io/posts/la-cita/</link><dc:creator>Txe Llenne</dc:creator><description>&lt;div&gt;&lt;p&gt;
 Sobre la contradicción.
 &lt;/p&gt;
 
@@ -12,22 +16,10 @@ que Hegel descubrió
 pero envolvió en misticismo. 
 K.M.
 &lt;/p&gt;
-&lt;p&gt;&lt;a href="https://touxstone.github.io/binnacle.github.io/posts/la-cita/"&gt;Read more…&lt;/a&gt; (9 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><guid>https://touxstone.github.io/binnacle.github.io/posts/la-cita/</guid><pubDate>Mon, 09 Nov 2020 17:37:27 GMT</pubDate></item><item><title>On generating JSON content from EMACS</title><link>https://touxstone.github.io/binnacle.github.io/posts/on-generating-json-content-from-emacs/</link><dc:creator>Txe Llenne</dc:creator><description>&lt;div&gt;&lt;div id="table-of-contents"&gt;
-&lt;h2&gt;Table of Contents&lt;/h2&gt;
-&lt;div id="text-table-of-contents"&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://touxstone.github.io/binnacle.github.io/posts/on-generating-json-content-from-emacs/#org67a996d"&gt;Context&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://touxstone.github.io/binnacle.github.io/posts/on-generating-json-content-from-emacs/#orgabad35e"&gt;Step One, the Expected Output&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://touxstone.github.io/binnacle.github.io/posts/on-generating-json-content-from-emacs/#orgd32b90c"&gt;Step Two, lets generate the block code for every item in my object list&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://touxstone.github.io/binnacle.github.io/posts/on-generating-json-content-from-emacs/#org1b8f3b5"&gt;Step Three, Now lets encode every item block in json terms.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://touxstone.github.io/binnacle.github.io/posts/on-generating-json-content-from-emacs/#org7422542"&gt;Step Four, Just use it!&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-org67a996d" class="outline-2"&gt;
-&lt;h2 id="org67a996d"&gt;Context&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org67a996d"&gt;
+&lt;p&gt;&lt;a href="https://touxstone.github.io/binnacle.github.io/posts/la-cita/"&gt;Read more…&lt;/a&gt; (9 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><guid>https://touxstone.github.io/binnacle.github.io/posts/la-cita/</guid><pubDate>Mon, 09 Nov 2020 17:37:27 GMT</pubDate></item><item><title>On generating JSON content from EMACS</title><link>https://touxstone.github.io/binnacle.github.io/posts/on-generating-json-content-from-emacs/</link><dc:creator>Txe Llenne</dc:creator><description>&lt;div id="outline-container-orgb854f00" class="outline-2"&gt;
+&lt;h2 id="orgb854f00"&gt;Context&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb854f00"&gt;
 &lt;p&gt;
 Hi, probably this post work for someone else. I wanted to gain literacy in ASP.NET development but got stuck at
 &lt;/p&gt;
-&lt;p&gt;&lt;a href="https://touxstone.github.io/binnacle.github.io/posts/on-generating-json-content-from-emacs/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://touxstone.github.io/binnacle.github.io/posts/on-generating-json-content-from-emacs/</guid><pubDate>Sat, 24 Oct 2020 19:14:31 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://touxstone.github.io/binnacle.github.io/posts/on-generating-json-content-from-emacs/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://touxstone.github.io/binnacle.github.io/posts/on-generating-json-content-from-emacs/</guid><pubDate>Sat, 24 Oct 2020 19:14:31 GMT</pubDate></item></channel></rss>

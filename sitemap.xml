@@ -7,15 +7,19 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/</loc>
-  <lastmod>2020-12-01T18:44:00Z</lastmod>
+  <lastmod>2021-02-10T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/2020/</loc>
   <lastmod>2020-12-01T18:44:00Z</lastmod>
  </url>
  <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/2021/</loc>
+  <lastmod>2021-02-10T21:42:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://touxstone.github.io/binnacle.github.io/archive.html</loc>
-  <lastmod>2020-12-01T18:50:00Z</lastmod>
+  <lastmod>2021-02-10T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/categories/</loc>
@@ -23,15 +27,19 @@
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/</loc>
-  <lastmod>2020-12-01T18:44:00Z</lastmod>
+  <lastmod>2021-02-10T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/2020/</loc>
   <lastmod>2020-12-01T18:44:00Z</lastmod>
  </url>
  <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/es/2021/</loc>
+  <lastmod>2021-02-10T21:42:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/archive.html</loc>
-  <lastmod>2020-12-01T18:50:00Z</lastmod>
+  <lastmod>2021-02-10T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/categories/</loc>
@@ -49,6 +57,11 @@
   <loc>https://touxstone.github.io/binnacle.github.io/es/posts/manual-para-peque%C3%B1os-guerreros/</loc>
   <lastmod>2020-12-01T18:44:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://touxstone.github.io/binnacle.github.io/posts/manual-para-peque%C3%B1os-guerreros/" />
+ </url>
+ <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/es/posts/matematicas-bayesianas-para-dummies/</loc>
+  <lastmod>2021-02-10T21:42:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://touxstone.github.io/binnacle.github.io/posts/matematicas-bayesianas-para-dummies/" />
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/posts/on-generating-json-content-from-emacs/</loc>
@@ -71,6 +84,10 @@
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/posts/manual-para-peque%C3%B1os-guerreros/</loc>
   <lastmod>2020-12-01T18:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/posts/matematicas-bayesianas-para-dummies/</loc>
+  <lastmod>2021-02-10T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/posts/on-generating-json-content-from-emacs/</loc>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html prefix="
+" lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Binnacle · Matemáticas Bayesianas Para Dummies </title>
+<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,200,100,700,300,500,600,800">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700%7CAbril+Fatface">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../rss.xml">
+<link rel="canonical" href="https://touxstone.github.io/binnacle.github.io/es/posts/matematicas-bayesianas-para-dummies/">
+<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Txe Llenne">
+<link rel="prev" href="../manual-para-peque%C3%B1os-guerreros/" title="Manual Para Pequeños Guerreros" type="text/html">
+<link rel="alternate" hreflang="en" href="../../../posts/matematicas-bayesianas-para-dummies/">
+</head>
+<body class="">
+    <a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
+
+    <div class="hsidebar">
+        <div class="container sidebar-sticky">
+            <div class="sidebar-about">
+              <h1>
+                <a href="https://touxstone.github.io/binnacle.github.io/es/">
+                      <h1 id="brand"><a href="https://touxstone.github.io/binnacle.github.io/es/" title="Binnacle" rel="home">
+
+        <span id="blog-title">Binnacle</span>
+    </a></h1>
+
+                </a>
+              </h1>
+                <p class="lead">Hey, here my (public) binnacle point.</p>
+
+            </div>
+                <nav id="menu" role="navigation" class="sidebar-nav"><a class="sidebar-nav-item" href="../../archive.html">Archivo</a>
+        <a class="sidebar-nav-item" href="../../categories/">Etiquetas</a>
+        <a class="sidebar-nav-item" href="../../rss.xml">Canal RSS</a>
+    
+    
+    </nav><footer id="footer"><span class="copyright">
+              Contents © 2021         <a href="mailto:psicotherapy@gmail.com">Txe Llenne</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            </span>
+            
+            
+        </footer>
+</div>
+    </div>
+
+    <div class="content container" id="content">
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><h1 class="post-title p-name"><a href="." class="u-url">Matemáticas Bayesianas Para Dummies</a></h1>
+
+    <span class="post-date">
+      <time class="published dt-published" datetime="2021-02-10T21:15:24Z" itemprop="datePublished" title="2021-02-10 21:15">2021-02-10 21:15</time></span>
+
+    
+    
+
+    <div class="e-content entry-content" itemprop="articleBody text">
+    <p>
+<img src="../../../images/bayes-images/a-ta-y.png" alt="nil"></p>
+
+<!-- TEASER_END -->
+
+<div id="outline-container-org3d2bc13" class="outline-2">
+<h2 id="org3d2bc13">Preliminares..</h2>
+<div class="outline-text-2" id="text-org3d2bc13">
+<p>
+No diría la intuición sino la apariencia, el primer vistazo. Sí, porque incluso el primer vistazo se entrena, y la observación eficiente, son procesos que la gente tiene de difícil quitar y poner. Es una clasificación errónea realmente separarlas y/o dar por hecho que son, por ejemplo, funciones paralelas o modos de trabajo que en un momento activamos, o no activamos del todo porque asumimos que son habilidades que quizá podemos no tener. Y dejamos la observación eficiente para los matemáticos. Y que sean otros los que se vean con elaborar maneras de tomar nota de lo que sucede, contar frecuencias, cruzar registros y establecer correlaciones entre hechos que fueren más sistemáticos y nos lleven a obtener conjeturas más precisas.
+</p>
+
+
+<p>
+Pero siempre hay un primer vistazo, luego un proceso que avanza hacia una mejor discriminación y una contrastación entre sombras y lugares comunes hasta que obtenemos la diferencia que discrimina una correlación de otra. Aquí cae, creo yo el punto en el que desvariamos. A unos les sirve para separar funciones pretendiendo que por separado se especializan, aunque no lo hacen. En vez de considerarlas continuidad de un mismo proceso en la figuración. El simple primer vistazo de los sucesivos. Por supuesto, cuando me refiero a las fases sucesivas al primer vistazo me refiero a leer dos veces el problema, cruzar probables factores, repetir la observación incluyendo variables comunes desapercibidas a primera vista y, en fin todo ese cuidadoso ritual del que matemáticos y estadísticos hacen su oficio. 
+</p>
+
+<p>
+Y, como cualquiera puede comprobar, pasado un tiempo que suele ser bastante breve o largo dependiendo del interés, o la obligación, aunque esto da cabo a extensiones fuera del objeto de esta nota. Incluso el primer vistazo se entrena. Si pasamos un tiempo haciendo algo, la experiencia sucesiva frente al asunto nos afina el primer vistazo. El primer vistazo de un experto puede ser críptico a ojos de un neófito, está claro. Dónde se asienta entonces la tesis de las funciones que quizá no tenemos?. 
+</p>
+
+<p>
+No soy quien para pontificar como el papa, natas. Pero saco mi espada de Damócles y la pongo delante del que se atenga. Yo digo que es la educación. O mejor, la mala educación. La tesis que divide el proceso de la figuración y nos mete en moldes y hace de la autoindulgencia un lifestyle, sí. 
+</p>
+
+<p>
+Para no ir más lejos, expondré a continuación un ejemplo. 
+</p>
+
+<p>
+Y para poner el asunto en contexto diré que buscaba documentación sobre el <a href="http://es.wikipedia.org/wiki/Teorema_de_Bayes">Teorema de Bayes</a>, una herramienta estadística y aquí convengo en dar razón a los más jóvenes en este oficio de figurar el mundo en el que vivimos. Mientras revisaba documentación aquí y allá, pensaba en lo difícil que exponen el asunto los profesionales del asunto. Puede que ese hecho sea la base de pensar que sí hay un puente roto o paralelo entre la intuición y una observación más sistemática. No me quejo tanto de los códigos y las matemáticas que esas segundas y sucesivas observaciones suponen. Me refiero a la manera que son documentadas. Los propios del oficio, matemáticos y/o estadísticos parecen convenir en que efectivamente son portadores de funciones especiales no presentes en el resto de mortales y parecen poner trampas en los accesos a sus torres de marfil. El que quiera subir la montaña debe asumir que irá tramo a tramo resolviendo trampas puestas a posta por los del oficio a manera de contraseña que, en mi experiencia, no tienen nada que ver con el problema real, ellos lo crean. El problema real es bastante más sencillo. Y allí tenéis la consecuencia peor de la mala educación, de la que hablaba antes. Y modelan ese mundo erróneo en el que dividen y claro, parece que vencen. 
+</p>
+
+<p>
+Así que buscando encontré el artículo de <a href="http://blog.fastfedora.com/2010/12/bayesian-math-for-dummies.html">T. Lohrbeer</a> quien en el mismo punto que yo, expone en simple un artículo de Steve Miller en el que éste cuenta lo que pasó a un amigo suyo, ya lo veréis más adelante, y pensé que era útil traducir al Español. 
+</p>
+
+<p>
+El hecho de que esté interesado en el razonamiento de Bayes no es que sea exactamente mi oficio, esto también cuenta. El caso es que hoy en día, cada vez más asuntos se resuelven mediante software que toma decisiones, tenéis que haber caído en ello. Desde los procedimientos de los mail servers para detectar spam en nuestras cuentas de correo, hasta las decisiones de los sitios de emergencia de los hospitales o las ambulancias para cruzar síntomas y cuadros diagnósticos y prever con propia antelación la intervención más apropiada. La teoría detrás de todo este proceso no es una euforia de la industria, ni mucho menos. Proviene de la no tan reciente ciencia estadística pero, hoy en día renovada, allí mi sorpresa. En un movimiento que llaman Máquina de Aprendizaje —Learning Machine. Y básicamente consiste en automatizar con la ayuda de hardware y software de hoy en día, esas rutinas de observación que haríamos humanos, por supuesto, en segunda y sucesivas fases, para discriminar un hecho de otro, un cuadro de síntomas de otro, en el ejemplo de la ambulancia o cualquier otra decisión, no os imagináis lo rápido que va esto. 
+</p>
+
+<p>
+Antes, debido al requerimiento de especialización de los oficios, la teoría errónea de las funciones para que estaríamos dotados, podría y de hecho ha hecho mella pasando por cierta. Hoy en día, la idea que son saltos en el proceso de contrastar nos hace usuarios de herramientas que sacan a relucir la verdadera conexión. La figuración sería un proceso continuo y el software, como antes un martillo o un destornillador, nos auxilian con el cálculo pero nos obligan con el diseño del enfoque al momento de determinar contrastar qué factor con cual índice y determinar probabilidades. Y pasa que quizá teníamos el primer vistazo simplemente algo abandonado. 
+</p>
+
+<p>
+Así que a menos que nos plazca esa autoindulgencia como militancia. Que sepáis que ha caído el telón de acero, que no soy yo el que da las noticias, pero aquí estoy cuando se trata de poner el punto sobre las íes, mi hobby de oficio.
+</p>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org83e0d1d" class="outline-2">
+<h2 id="org83e0d1d">El Problema</h2>
+<div class="outline-text-2" id="text-org83e0d1d">
+<p>
+Un amigo de Steve sacó positivo en un test por un diagnóstico. La enfermedad ocurre poco frecuentemente, en general, en la población. El test identifica quiénes tienen la enfermedad, de hecho 99% de los que la padecen son detectados por el test pero da falso positivo en 1 de 20 pruebas, o, se sabe, falla en un 5% de las veces. ¿Debería, el amigo de Steve, estar preocupado por el resultado obtenido?.
+</p>
+
+<p>
+<b>Hagamos una lista de los hechos:</b>
+</p>
+<ul class="org-ul">
+<li>
+<b>La tasa de incidencia:</b> <br>
+La enfermedad ocurre en 1 de cada 1000 habitantes, independiente del resultado de los tests.</li>
+<li>
+<b>La tasa de verdadero positivo:</b> <br>
+99% de las personas que tienen la enfermedad dan positivo en el test.</li>
+<li>
+<b>Tasa de falso positivo:</b> <br>
+5% de personas que no tienen la enfermedad dan positivo en el test.</li>
+<li>
+<b>La condición actual del caso:</b> <br>
+El amigo de Steve da positivo en el test.</li>
+</ul>
+<p>
+La cuestión entonces es, dada esta información ¿Cuál es la probabilidad del amigo de Steve de tener realmente la enfermedad (o, resulte ser un caso de falso positivo)?
+</p>
+
+<p>
+Antes que tenga que someterse al test, pensemos, primero, en la tasa de incidencia, dado que no tenemos otra información. Según esto, la probabilidad de que padezca la enfermedad sería de <code>1/1000 = 0.1%</code>. Dado que el amigo de Steve ha dado positivo en la prueba, la frecuencia de acierto del <code>95%</code> del test es realmente intimidatoria, pero, en firme, ¿Cuál es la probabilidad de tener la enfermedad?.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf889cb6" class="outline-2">
+<h2 id="orgf889cb6">El Trecho Largo.</h2>
+<div class="outline-text-2" id="text-orgf889cb6">
+<p>
+Las matemáticas Bayesianas ofrecen una elegante manera de resolver este cálculo, de hecho, Steve expuso el procedimiento en su artículo bastante exhaustivamente pero, hagamos el caminito largo y el paso a paso que nos ayude a comprender la importancia de las herramientas (de cálculo, y no andar por allí despotricando de ellas con tanta "licenciatura"). 
+</p>
+
+<p>
+A fin de ganar intuición sobre el problema, he traducido las abstracciones de las probabilidades a elementos más manejables de modo que podamos fácilmente figurarnos ratios y porcentajes y compararlos. Porque mientras parece fácil (y, de hecho vamos demasiado rápido) comparar figuras como la incidencia general o el ratio de verdadero y falso positivo, en vista que resultan figuras familiares, <code>0.1%</code>, <code>99%</code> y <code>5%</code>. Cada uno de estos porcentajes se refieren a diferentes medidas y grupos de objetos y, como veremos, tener un mapa bien hecho, o, un desastre de situación depende justamente de a qué conjunto de cosas se aplique esos porcentajes.
+</p>
+
+<p>
+Para facilitar el cálculo vamos a tomar como ejemplo una población de <code>100,000</code> personas. <br>
+De ese grupo de gente, veamos, cuántos, se espera tengan efectivamente la enfermedad y cuántos no.
+</p>
+
+<ul class="org-ul">
+<li>
+<code>100,000</code> Población considerada. <br><code>100</code>   Población afectada por la enfermedad (<code>1</code> por cada <code>1000</code> ó <code>0.1%</code>) <br><code>99,900</code>   No tienen la enfermedad. <br>
+</li>
+</ul>
+<p>
+Bien. Ya tenemos algo, <code>100</code> personas tendrían la enfermedad.  Ahora, cuántas de esas personas dan positivo o negativo en el test?
+</p>
+
+<p>
+Recordad que se sabe que <code>99%</code> de las personas que tienen la enfermad dan positivo en el test.
+</p>
+
+<ul class="org-ul">
+<li>
+<code>100</code> Tienen la enfermedad. <br><code>99</code> Dan positivo.    <br><code>1</code> Da negativo (<code>1%</code>) <br>
+</li>
+</ul>
+<p>
+Ahora, de esas <code>99,900</code> personas que no tendrían la enfermedad, cuántos dan positivo en el test y cuántos negativo?. Recordad que un <code>5%</code> de personas que no tienen la enfermedad, aún así dan positivo en el test.
+</p>
+
+<ul class="org-ul">
+<li>
+<code>99,900</code> Sería la población no afectada por la enfermedad.. <br><code>4,995</code> (Aún así) dan positivo (<code>5%</code>) <br><code>94,905</code> Dan negativo.</li>
+</ul>
+<p>
+Ahora es cuando este asunto se pone interesante. Cuántas personas dan positivo y cuántas dan negativo considerando el total del grupo? 
+</p>
+
+<ul class="org-ul">
+<li>
+<code>100,000</code> población considerada. <br><code>5,094</code> dan positivo (<code>4,995 + 99</code>). <br><code>94,906</code> dan negativo (<code>94,905 + 1</code>). <br>
+</li>
+</ul>
+<p>
+De modo que, si de <code>5,094</code> que dan positivo en el test, sólo <code>99</code> resultan tener la enfermedad: la probabilidad de tener la enfermedad de alguien que da positivo en el test es de <code>99</code> sobre <code>5,094</code>.
+</p>
+
+<p>
+<img src="../../../images/bayes-images/the-long-way-f.png" alt="nil"></p>
+
+<p>
+Que, es el mismo resultado al que llega Steve, aunque por una vía más rápida como es el cálculo Bayesiano.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4fb07ea" class="outline-2">
+<h2 id="org4fb07ea">La Vía Rápida.</h2>
+<div class="outline-text-2" id="text-org4fb07ea">
+<p>
+Para aquellos que quieran saber el atajo y resolver la cuestión usando la respectiva ecuación, traducida queda así:
+</p>
+
+<p>
+<img src="../../../images/bayes-images/short-way-1.png" alt="nil"></p>
+
+<p>
+Y, en números, digamos, quedaría así
+</p>
+
+<p>
+<img src="../../../images/bayes-images/the-short-way2.png" alt="nil"></p>
+
+<p>
+Bueno, he dicho traducida, porque tal y como se expone en su forma general y a modo de documentación se vería así:
+</p>
+
+<p>
+<img src="../../../images/bayes-images/formula-bayes.png" alt="nil"></p>
+
+<p>
+Hey! no os asustéis, si parece críptica. De alguna forma tiene que codificarse el procedimiento. Puede ser intimidatoria pero es fácil, comprendiéndola ayuda a ver correlaciones eficientemente. Y, si ayuda, es como la escritura de la música. Qué haríamos sin ella para reproducir la obra de los grandes artistas de cualquier época, y eso no impide que seamos sin distinción capaces de apreciar, a veces, incluso cantar o componer tonadas.
+</p>
+
+<p>
+Lo primero sería comprender: <br></p>
+
+<ul class="org-ul">
+<li>Los elementos de la fórmula:</li>
+</ul>
+<p>
+P = Probabilidad. <br>
+"|" = se lee "dado que", e.g. "~ probabilidad que suceda el evento E <b>dado que</b> ..(H)" <br>
+E = Evento (e.g. obtener positivo en los resultados del test) <br>
+H<sub>1</sub> = Hipótesis 1 (e.g. que esté enfermo) <br>
+H<sub>2</sub> = Hipótesis 2 (e.g. que no lo esté) <br></p>
+
+<p>
+De modo que con los componentes localizados, la fórmula arriba mencionada, en el caso que nos ocupa, podría leerse de la siguiente manera.
+</p>
+
+<p>
+La probabilidad de que el amigo de Steve esté enfermo, dado que ha obtenido positivo en el test en cuestión, es igual a la probabilidad que haya dado positivo en el test dado que esté efectivamente enfermo (o, que forme parte de la población afectada por la enfermedad (<code>0.001</code>)) multiplicada por la probabilidad de que el test detecte correctamente la enfermedad (<code>0.99</code>); todo esto, dividido entre la suma de todas las probabilidades (en su forma general, en este caso) la probabilidad mencionada (<code>0.001 * 0.99</code>) más la probabilidad contraria, que dé positivo en el test pero no esté enfermo (<code>0.05</code>) multiplicada por la probabilidad que pertenezca a la población que no está afectada por la enfermedad (índice que, a su vez, resulta de restar 1 menos el índice de ocurrencia de la enfermedad (<code>1 - 0.001</code>)). 
+</p>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><div class="pager hidden-print pagination">
+
+            <span class="previous pagination-item older">
+                <a href="../manual-para-peque%C3%B1os-guerreros/" rel="prev" title="Manual Para Pequeños Guerreros">
+                Publicación anterior
+                </a>
+            </span>
+
+
+            <span class="next pagination-item newer">
+Siguiente publicación
+            </span>
+
+        </div>
+
+    </nav></aside></article>
+</div>
+            <script src="../../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

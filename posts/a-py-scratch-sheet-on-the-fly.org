@@ -1,0 +1,50 @@
+#+BEGIN_COMMENT
+.. title: A Py Scratch Sheet On The Fly ~~`
+.. slug: a-py-scratch-sheet-on-the-fly
+.. date: 2021-02-17 18:54:14 UTC
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+
+#+END_COMMENT
+
+Hi, People.
+Os presento aquí una ventana de ayuda y probar al vuelo trozos de código (python). Útil si requerís verificar algo corto y rápido, como normalmente aparecen en los manuales, y la lectura nos pilla fuera del entorno habitual de estudio o trabajo y/o no podéis esperar. A veces pasa...
+
+{{{TEASER_END}}}
+
+#+begin_export html
+<html>
+  <!DOCTYPE html>
+  <meta charset="utf-8">
+  <head>
+      <link rel="stylesheet" type="text/css" href="http://app.klipse.tech/css/codemirror.css">
+
+      <script>
+       window.klipse_settings = {
+         selector_eval_python_client: '.language-klipse-python'
+       };
+      </script>
+
+  </head>
+
+  <body>
+    <div>
+       <p>Por, ejemplo ensayemos la famosa plantilla "Hola Mundo" , por cierto powered by <strong>klipsify</strong>. Por cierto, es interactiva. Podéis hacer cambios y demás, probad!</p>
+        <p>And now, we are going to <strong>klipsify</strong> this code snippet:</p>
+
+        <pre><code class="language-klipse-python">
+def foo():
+    print("Hello World!")
+
+foo()
+        </code></pre>
+    </div>
+    <script src="http://app.klipse.tech/plugin_prod/js/klipse_plugin.min.js"></script>
+  </body>
+
+</html>
+
+#+end_export

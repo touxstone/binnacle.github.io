@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/archive.html</loc>
-  <lastmod>2021-02-10T21:42:00Z</lastmod>
+  <lastmod>2021-02-17T18:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/categories/</loc>
@@ -39,7 +39,7 @@
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/archive.html</loc>
-  <lastmod>2021-02-10T21:42:00Z</lastmod>
+  <lastmod>2021-02-17T18:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/categories/</loc>
@@ -48,6 +48,11 @@
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/galleries/</loc>
   <lastmod>2020-12-01T17:07:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/es/posts/a-py-scratch-sheet-on-the-fly/</loc>
+  <lastmod>2021-02-17T18:55:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://touxstone.github.io/binnacle.github.io/posts/a-py-scratch-sheet-on-the-fly/" />
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/posts/la-cita/</loc>
@@ -75,6 +80,10 @@
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/listings/</loc>
   <lastmod>2020-12-01T16:57:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/posts/a-py-scratch-sheet-on-the-fly/</loc>
+  <lastmod>2021-02-17T18:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/posts/la-cita/</loc>

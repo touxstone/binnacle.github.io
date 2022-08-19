@@ -32,13 +32,8 @@
  */
 
 html {
-  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
 }
-h1 {
-	font-family: 'Libre Baskerville', serif;
-	font-weight: 400; 
-}
-
 @media (min-width: 48em) {
   html {
     font-size: 16px;
@@ -96,12 +91,10 @@ div.hsidebar a, .hsidebar a {
 }
 
 /* About section */
-
 .sidebar-about h1 {
   color: #fff;
   margin-top: 0;
-  font-family: "Libre Baskerville", Abril Fatface, serif;
-  font-weight: 400;
+  font-family: "Abril Fatface", serif;
   font-size: 2.75rem;
 }
 
@@ -362,6 +355,3 @@ a.sidebar-nav-item:focus {
 .thumbnails > li:last-of-type {
   margin-right: 0;
 }
-
-
-

@@ -48,3 +48,33 @@ foo()
 </html>
 
 #+end_export
+
+* Edit. date ;; Wed 21 Sep 19:42:50 BST 2022 
+I should say that the above python scratch page has a handicap as it cannot run properly on mobile browsers, but the fact is that this try dates back to a time when PyScript did not exist, yet. Let's try the same plan with this other approach this time, using PyScript.
+
+#+begin_export html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>REPL</title>
+
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript_base.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <py-env>
+      - numpy
+    </py-env>
+    </head>
+    <body>
+      <div id="output" class="text-3xl"></div>
+      <!-- <py-script>
+        
+      </py-script> -->
+      <py-repl></py-repl>
+    </body>
+
+</html>
+#+end_export

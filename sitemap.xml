@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/</loc>
-  <lastmod>2022-08-24T21:24:00Z</lastmod>
+  <lastmod>2024-11-06T21:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/2020/</loc>
@@ -22,16 +22,40 @@
   <lastmod>2022-08-24T21:24:00Z</lastmod>
  </url>
  <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/2024/</loc>
+  <lastmod>2024-11-06T21:59:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://touxstone.github.io/binnacle.github.io/archive.html</loc>
-  <lastmod>2022-08-24T21:58:00Z</lastmod>
+  <lastmod>2024-11-06T21:58:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/categories/</loc>
-  <lastmod>2022-08-24T21:24:00Z</lastmod>
+  <lastmod>2024-11-07T19:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/categories/cat_editing-pdf-latex-orgmode/</loc>
+  <lastmod>2024-11-07T19:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/categories/code-blocks/</loc>
+  <lastmod>2024-11-07T19:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/categories/latex/</loc>
+  <lastmod>2024-11-07T19:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/categories/listings/</loc>
+  <lastmod>2024-11-07T19:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/categories/styling/</loc>
+  <lastmod>2024-11-07T19:31:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/</loc>
-  <lastmod>2022-08-24T21:24:00Z</lastmod>
+  <lastmod>2024-11-06T21:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/2020/</loc>
@@ -46,12 +70,36 @@
   <lastmod>2022-08-24T21:24:00Z</lastmod>
  </url>
  <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/es/2024/</loc>
+  <lastmod>2024-11-06T21:59:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/archive.html</loc>
-  <lastmod>2022-08-24T21:58:00Z</lastmod>
+  <lastmod>2024-11-06T21:58:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/categories/</loc>
-  <lastmod>2022-08-24T21:24:00Z</lastmod>
+  <lastmod>2024-11-07T19:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/es/categories/cat_editing-pdf-latex-orgmode/</loc>
+  <lastmod>2024-11-07T19:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/es/categories/code-blocks/</loc>
+  <lastmod>2024-11-07T19:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/es/categories/latex/</loc>
+  <lastmod>2024-11-07T19:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/es/categories/listings/</loc>
+  <lastmod>2024-11-07T19:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/es/categories/styling/</loc>
+  <lastmod>2024-11-07T19:31:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/galleries/</loc>
@@ -68,6 +116,11 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://touxstone.github.io/binnacle.github.io/posts/a-py-scratch-sheet-on-the-fly/" />
  </url>
  <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/es/posts/customizing-code-listings-in-org-mode-latex/</loc>
+  <lastmod>2024-11-06T21:59:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://touxstone.github.io/binnacle.github.io/posts/customizing-code-listings-in-org-mode-latex/" />
+ </url>
+ <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/posts/la-cita/</loc>
   <lastmod>2022-08-24T21:24:00Z</lastmod>
  </url>
@@ -80,6 +133,11 @@
   <loc>https://touxstone.github.io/binnacle.github.io/es/posts/matematicas-bayesianas-para-dummies/</loc>
   <lastmod>2022-08-24T21:24:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://touxstone.github.io/binnacle.github.io/posts/matematicas-bayesianas-para-dummies/" />
+ </url>
+ <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/es/posts/my-r-language-quick-reference/</loc>
+  <lastmod>2022-09-22T11:22:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://touxstone.github.io/binnacle.github.io/posts/my-r-language-quick-reference/" />
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/es/posts/on-generating-json-content-from-emacs/</loc>
@@ -96,11 +154,15 @@
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/posts/7-de-julio-1932/</loc>
-  <lastmod>2022-08-24T21:24:00Z</lastmod>
+  <lastmod>2024-09-22T22:50:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/posts/a-py-scratch-sheet-on-the-fly/</loc>
   <lastmod>2022-08-24T21:24:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/posts/customizing-code-listings-in-org-mode-latex/</loc>
+  <lastmod>2024-11-06T21:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/posts/la-cita/</loc>
@@ -114,6 +176,10 @@
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/posts/matematicas-bayesianas-para-dummies/</loc>
   <lastmod>2022-08-24T21:24:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://touxstone.github.io/binnacle.github.io/posts/my-r-language-quick-reference/</loc>
+  <lastmod>2022-09-22T11:22:00Z</lastmod>
  </url>
  <url>
   <loc>https://touxstone.github.io/binnacle.github.io/posts/on-generating-json-content-from-emacs/</loc>

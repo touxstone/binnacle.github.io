@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Binnacle · On generating JSON content from EMACS </title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700%7CAbril+Fatface">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 <meta content="#5670d4" name="theme-color">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../es/rss.xml">
@@ -39,7 +39,7 @@
     
     
     </nav><footer id="footer"><span class="copyright">
-              Contents © 2022         <a href="mailto:psicotherapy@gmail.com">Txe Llenne</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+              Contents © 2024         <a href="mailto:psicotherapy@gmail.com">Txe Llenne</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             </span>
             
             
@@ -57,9 +57,9 @@
     
 
     <div class="e-content entry-content" itemprop="articleBody text">
-    <div id="outline-container-orgb854f00" class="outline-2">
-<h2 id="orgb854f00">Context</h2>
-<div class="outline-text-2" id="text-orgb854f00">
+    <div id="outline-container-orge431385" class="outline-2">
+<h2 id="orge431385">Context</h2>
+<div class="outline-text-2" id="text-orge431385">
 <p>
 Hi, probably this post work for someone else. I wanted to gain literacy in ASP.NET development but got stuck at
 </p>
@@ -69,9 +69,9 @@ Hi, probably this post work for someone else. I wanted to gain literacy in ASP.N
 </p>
 </div>
 </div>
-<div id="outline-container-org39b6fc6" class="outline-2">
-<h2 id="org39b6fc6">Step One, the Expected Output</h2>
-<div class="outline-text-2" id="text-org39b6fc6">
+<div id="outline-container-orgd264e91" class="outline-2">
+<h2 id="orgd264e91">Step One, the Expected Output</h2>
+<div class="outline-text-2" id="text-orgd264e91">
 <ol class="org-ol">
 <li>As seen on the screenshoot:</li>
 </ol>
@@ -98,59 +98,59 @@ but my SPA goes about fruits and vegetables items, so following the structure sh
 <p>
 In order to call my object list easily, lets set a variable 'fruts':
 </p>
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">setq</span> <span class="nv">fruts</span> <span class="o">'</span><span class="p">(</span><span class="nv">beetroots</span> <span class="nv">carrots</span> <span class="nv">cucumber</span> <span class="nv">celery</span> <span class="nv">cougette</span> <span class="nv">kale</span> <span class="nv">apple</span> <span class="nv">kiwifruit</span> <span class="nv">avocado</span> <span class="nv">lemon</span> <span class="nv">pepper</span> <span class="nv">garlic</span> <span class="nv">ginger</span> <span class="nv">sweet</span> <span class="nv">potatoes</span> <span class="nv">banana</span> <span class="nv">orange</span> <span class="nv">mandarin</span> <span class="nv">blackberry</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">fruts</span><span class="w"> </span><span class="o">'</span><span class="p">(</span><span class="nv">beetroots</span><span class="w"> </span><span class="nv">carrots</span><span class="w"> </span><span class="nv">cucumber</span><span class="w"> </span><span class="nv">celery</span><span class="w"> </span><span class="nv">cougette</span><span class="w"> </span><span class="nv">kale</span><span class="w"> </span><span class="nv">apple</span><span class="w"> </span><span class="nv">kiwifruit</span><span class="w"> </span><span class="nv">avocado</span><span class="w"> </span><span class="nv">lemon</span><span class="w"> </span><span class="nv">pepper</span><span class="w"> </span><span class="nv">garlic</span><span class="w"> </span><span class="nv">ginger</span><span class="w"> </span><span class="nv">sweet</span><span class="w"> </span><span class="nv">potatoes</span><span class="w"> </span><span class="nv">banana</span><span class="w"> </span><span class="nv">orange</span><span class="w"> </span><span class="nv">mandarin</span><span class="w"> </span><span class="nv">blackberry</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 
-<div id="outline-container-orgc445bd4" class="outline-2">
-<h2 id="orgc445bd4">Step Two, lets generate the block code for every item in my object list</h2>
-<div class="outline-text-2" id="text-orgc445bd4">
+<div id="outline-container-org4b88289" class="outline-2">
+<h2 id="org4b88289">Step Two, lets generate the block code for every item in my object list</h2>
+<div class="outline-text-2" id="text-org4b88289">
 <p>
 In order to generate the data block for every item
 </p>
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">defun</span> <span class="nv">foo-objs-list</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span>
-  <span class="p">(</span><span class="nf">mapcar</span> <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">i</span><span class="p">)</span>
-	    <span class="p">(</span><span class="nf">split-string</span>
-	     <span class="p">(</span><span class="nf">format</span> <span class="s">"id %s img img/%s info https://www.wolframalpha.com/input/?i=%s"</span> <span class="nv">i</span> <span class="nv">i</span> <span class="nv">i</span><span class="p">)))</span> <span class="nv">x</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">defun</span><span class="w"> </span><span class="nv">foo-objs-list</span><span class="w"> </span><span class="p">(</span><span class="nf">x</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="nf">mapcar</span><span class="w"> </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">(</span><span class="nf">i</span><span class="p">)</span>
+<span class="w">            </span><span class="p">(</span><span class="nf">split-string</span>
+<span class="w">             </span><span class="p">(</span><span class="nb">format</span><span class="w"> </span><span class="s">"id %s img img/%s info https://www.wolframalpha.com/input/?i=%s"</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="nv">i</span><span class="p">)))</span><span class="w"> </span><span class="nv">x</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 
-<div id="outline-container-org083769d" class="outline-2">
-<h2 id="org083769d">Step Three, Now lets encode every item block in json terms.</h2>
-<div class="outline-text-2" id="text-org083769d">
+<div id="outline-container-orga70da52" class="outline-2">
+<h2 id="orga70da52">Step Three, Now lets encode every item block in json terms.</h2>
+<div class="outline-text-2" id="text-orga70da52">
 <ol class="org-ol">
 <li>In order to mapcar every block in json terms:</li>
 </ol>
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">defun</span> <span class="nv">foo-encoding-objs-list</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span>
-  <span class="p">(</span><span class="nf">mapcar</span> <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">i</span><span class="p">)</span>
-	    <span class="p">(</span><span class="nf">insert</span>
-	     <span class="p">(</span><span class="nf">format</span> <span class="s">"%s,"</span>
-		     <span class="p">(</span><span class="nf">json-encode-plist</span> <span class="nv">i</span><span class="p">))))</span>
-	  <span class="p">(</span><span class="nf">foo-objs-list</span> <span class="nv">x</span><span class="p">)))</span>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">defun</span><span class="w"> </span><span class="nv">foo-encoding-objs-list</span><span class="w"> </span><span class="p">(</span><span class="nf">x</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="nf">mapcar</span><span class="w"> </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">(</span><span class="nf">i</span><span class="p">)</span>
+<span class="w">            </span><span class="p">(</span><span class="nf">insert</span>
+<span class="w">             </span><span class="p">(</span><span class="nb">format</span><span class="w"> </span><span class="s">"%s,"</span>
+<span class="w">                     </span><span class="p">(</span><span class="nf">json-encode-plist</span><span class="w"> </span><span class="nv">i</span><span class="p">))))</span>
+<span class="w">          </span><span class="p">(</span><span class="nf">foo-objs-list</span><span class="w"> </span><span class="nv">x</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 
-<div id="outline-container-org7474c89" class="outline-2">
-<h2 id="org7474c89">Step Four, Just use it!</h2>
-<div class="outline-text-2" id="text-org7474c89">
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">foo-encoding-objs-list</span> <span class="nv">fruts</span><span class="p">)</span>
+<div id="outline-container-org37a8796" class="outline-2">
+<h2 id="org37a8796">Step Four, Just use it!</h2>
+<div class="outline-text-2" id="text-org37a8796">
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">foo-encoding-objs-list</span><span class="w"> </span><span class="nv">fruts</span><span class="p">)</span>
 </pre></div>
 
 
 <ol class="org-ol">
 <li>Or the version combining both preceding functions in one:</li>
 </ol>
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">defun</span> <span class="nv">foo-encoding-objs-list-version-all-together</span> <span class="p">(</span><span class="nf">x</span><span class="p">)</span>
-   <span class="p">(</span><span class="nf">mapcar</span> <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">i</span><span class="p">)</span>
-	     <span class="p">(</span><span class="nf">insert</span> <span class="p">(</span><span class="nf">format</span> <span class="s">"%s,"</span> <span class="p">(</span><span class="nf">json-encode-plist</span> <span class="nv">i</span><span class="p">))))</span>
-	   <span class="p">(</span><span class="nf">mapcar</span> <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">i</span><span class="p">)</span>
-		     <span class="p">(</span><span class="nf">split-string</span>
-		      <span class="p">(</span><span class="nf">format</span>
-		       <span class="s">"id %s img img/%s info https://www.wolframalpha.com/input/?i=%s "</span>
-			      <span class="nv">i</span> <span class="nv">i</span> <span class="nv">i</span><span class="p">)))</span> <span class="nv">x</span><span class="p">)))</span>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">defun</span><span class="w"> </span><span class="nv">foo-encoding-objs-list-version-all-together</span><span class="w"> </span><span class="p">(</span><span class="nf">x</span><span class="p">)</span>
+<span class="w">   </span><span class="p">(</span><span class="nf">mapcar</span><span class="w"> </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">(</span><span class="nf">i</span><span class="p">)</span>
+<span class="w">             </span><span class="p">(</span><span class="nf">insert</span><span class="w"> </span><span class="p">(</span><span class="nb">format</span><span class="w"> </span><span class="s">"%s,"</span><span class="w"> </span><span class="p">(</span><span class="nf">json-encode-plist</span><span class="w"> </span><span class="nv">i</span><span class="p">))))</span>
+<span class="w">           </span><span class="p">(</span><span class="nf">mapcar</span><span class="w"> </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">(</span><span class="nf">i</span><span class="p">)</span>
+<span class="w">                     </span><span class="p">(</span><span class="nf">split-string</span>
+<span class="w">                      </span><span class="p">(</span><span class="nb">format</span>
+<span class="w">                       </span><span class="s">"id %s img img/%s info https://www.wolframalpha.com/input/?i=%s "</span>
+<span class="w">                              </span><span class="nv">i</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="nv">i</span><span class="p">)))</span><span class="w"> </span><span class="nv">x</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>

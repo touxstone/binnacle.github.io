@@ -91,6 +91,10 @@ h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility;
 }
 h1 {
+	font-family: 'Libre Baskerville', serif;
+	font-weight: 400; 
+} 
+h1 {
   font-size: 2rem;
 }
 h2 {
@@ -519,7 +523,7 @@ pre.code.literal-block {
  */
 
 html {
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-family: "Raleway","PT Sans", Helvetica, Arial, sans-serif;
 }
 @media (min-width: 48em) {
   html {
@@ -581,7 +585,7 @@ div.hsidebar a, .hsidebar a {
 .sidebar-about h1 {
   color: #fff;
   margin-top: 0;
-  font-family: "Abril Fatface", serif;
+  font-family: "Libre Baskerville","Abril Fatface", serif;
   font-size: 2.75rem;
 }
 
@@ -869,6 +873,7 @@ pre.code .c1, .code .codetable .c1, .highlight pre .c1 { color: #586e75; font-st
 pre.code .cs, .code .codetable .cs, .highlight pre .cs { color: #586e75; font-style: italic } /* Comment.Special */
 pre.code .gd, .code .codetable .gd, .highlight pre .gd { color: #dc322f } /* Generic.Deleted */
 pre.code .ge, .code .codetable .ge, .highlight pre .ge { color: #839496; font-style: italic } /* Generic.Emph */
+pre.code .ges, .code .codetable .ges, .highlight pre .ges { color: #839496; font-weight: bold; font-style: italic } /* Generic.EmphStrong */
 pre.code .gr, .code .codetable .gr, .highlight pre .gr { color: #dc322f } /* Generic.Error */
 pre.code .gh, .code .codetable .gh, .highlight pre .gh { color: #839496; font-weight: bold } /* Generic.Heading */
 pre.code .gi, .code .codetable .gi, .highlight pre .gi { color: #859900 } /* Generic.Inserted */

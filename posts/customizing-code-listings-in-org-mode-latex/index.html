@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html prefix="
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Binnacle · Customizing Code listings In OrgMode Latex </title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../es/rss.xml">
+<link rel="canonical" href="https://touxstone.github.io/binnacle.github.io/posts/customizing-code-listings-in-org-mode-latex/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Txe Llenne">
+<link rel="prev" href="../my-r-language-quick-reference/" title="My R Language Quick Reference" type="text/html">
+<link rel="alternate" hreflang="es" href="../../es/posts/customizing-code-listings-in-org-mode-latex/">
+</head>
+<body class="">
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+    <div class="hsidebar">
+        <div class="container sidebar-sticky">
+            <div class="sidebar-about">
+              <h1>
+                <a href="https://touxstone.github.io/binnacle.github.io/">
+                      <h1 id="brand"><a href="https://touxstone.github.io/binnacle.github.io/" title="Binnacle" rel="home">
+
+        <span id="blog-title">Binnacle</span>
+    </a></h1>
+
+                </a>
+              </h1>
+                <p class="lead">Hey, here my (public) binnacle point.</p>
+
+            </div>
+                <nav id="menu" role="navigation" class="sidebar-nav"><a class="sidebar-nav-item" href="../../archive.html">Archive</a>
+        <a class="sidebar-nav-item" href="../../categories/">Tags</a>
+        <a class="sidebar-nav-item" href="../../rss.xml">RSS feed</a>
+    
+    
+    </nav><footer id="footer"><span class="copyright">
+              Contents © 2024         <a href="mailto:psicotherapy@gmail.com">Txe Llenne</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            </span>
+            
+            
+        </footer>
+</div>
+    </div>
+
+    <div class="content container" id="content">
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><h1 class="post-title p-name"><a href="." class="u-url">Customizing Code listings In OrgMode Latex</a></h1>
+
+    <span class="post-date">
+      <time class="published dt-published" datetime="2024-11-06T21:53:17Z" itemprop="datePublished" title="2024-11-06 21:53">2024-11-06 21:53</time></span>
+
+    
+    
+
+    <div class="e-content entry-content" itemprop="articleBody text">
+    <p>
+In my recent exploration of <b><b>Org-mode</b></b> and LaTeX, I encountered a limitation with the <code>org-latex-listings-options</code> variable, which restricts the customization of code listings. However, I discovered a workaround that allows for greater flexibility in styling code blocks. I wanted to share this solution, as it may help others facing the same challenges.
+</p>
+<!-- TEASER_END -->
+<div id="outline-container-org1286df4" class="outline-2">
+<h2 id="org1286df4">The Problem</h2>
+<div class="outline-text-2" id="text-org1286df4">
+<p>
+While working with the listings package in LaTeX, I found that the <code>org-latex-listings-options</code> variable only accepts a limited set of parameters. Specifically, I wanted to include additional styling preferences for my code blocks, but I was constrained by the predefined keys.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5860662" class="outline-2">
+<h2 id="org5860662">The Workaround</h2>
+<div class="outline-text-2" id="text-org5860662">
+<p>
+To overcome this limitation, I utilized one of the label key in a way that was not documented. Here’s how I did it:
+</p>
+</div>
+
+<div id="outline-container-org0558ba0" class="outline-3">
+<h3 id="org0558ba0">My ORG environment:</h3>
+<div class="outline-text-3" id="text-org0558ba0">
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">org-latex-listings</span><span class="w"> </span><span class="ss">'t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org2d95831" class="outline-3">
+<h3 id="org2d95831">Define a Custom Style:</h3>
+<div class="outline-text-3" id="text-org2d95831">
+<p>
+In a separate <code>'.tex'</code> file, I defined my custom style using:
+</p>
+
+<div class="highlight"><pre><span></span><span class="k">\lstdefinestyle</span><span class="nb">{</span>mystyle<span class="nb">}{</span>...<span class="nb">}</span>
+</pre></div>
+
+
+<p>
+This allows me to specify various options for code formatting, here a tested example.
+</p>
+<div class="highlight"><pre><span></span><span class="c">%settings.tex</span>
+<span class="c">% (...)</span>
+<span class="c">% (some othes packages you use)</span>
+
+<span class="k">\usepackage</span><span class="nb">{</span>xcolor<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>listings<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>inconsolata<span class="nb">}</span>
+<span class="k">\lstdefinestyle</span><span class="nb">{</span>mystyle<span class="nb">}{</span><span class="c">%</span>
+    language=Python,
+    backgroundcolor=<span class="k">\color</span><span class="nb">{</span>gray!06<span class="nb">}</span>,
+    basicstyle=<span class="k">\small\ttfamily\Inconsolata</span>,
+    aboveskip=<span class="nb">{</span>1.0<span class="k">\baselineskip</span><span class="nb">}</span>,
+    belowskip=<span class="nb">{</span>1.0<span class="k">\baselineskip</span><span class="nb">}</span>,
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=4,
+    prebreak=<span class="k">\raisebox</span><span class="nb">{</span>0ex<span class="nb">}</span>[0ex][0ex]<span class="nb">{</span><span class="k">\ensuremath</span><span class="nb">{</span><span class="k">\hookleftarrow</span><span class="nb">}}</span>,
+    frame=single,
+    xleftmargin=2em,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    keywordstyle=<span class="k">\color</span><span class="na">[rgb]</span><span class="nb">{</span>0.627,0.126,0.941<span class="nb">}</span>,
+    commentstyle=<span class="k">\color</span><span class="na">[rgb]</span><span class="nb">{</span>0.133,0.545,0.133<span class="nb">}</span>,
+    stringstyle=<span class="k">\color</span><span class="na">[rgb]</span><span class="nb">{</span>0.6,0,0<span class="nb">}</span>,
+    numbers=left,
+    numberstyle=<span class="k">\tiny\color</span><span class="nb">{</span>gray<span class="nb">}</span>,
+    stepnumber=1,
+    numbersep=10pt,
+    captionpos=t,
+    escapeinside=
+<span class="nb">}</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org35abb09" class="outline-3">
+<h3 id="org35abb09">Load the Settings Document:</h3>
+<div class="outline-text-3" id="text-org35abb09">
+<p>
+I load this settings document in my <b><b>Org</b></b> file using the <code>LATEX_HEADER</code> directive. This allowed me to apply all the options defined in mystyle to my document.
+</p>
+<div class="highlight"><pre><span></span>#+LATEX_HEADER: \input{~/.emacs.d/customizations/settings.tex}
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org443f499" class="outline-3">
+<h3 id="org443f499">Explicitly Set Options:</h3>
+<div class="outline-text-3" id="text-org443f499">
+<p>
+Despite this workaround, I found that some options, such as <code>numbers</code> and <code>numberstyle</code>, were ignored when defined in the custom style. To ensure these options were applied, I explicitly added them to the <b><b>org-latex-listings-options</b></b> variable in my <b><b>Emacs</b></b> configuration:
+</p>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">org-latex-listings</span><span class="w"> </span><span class="ss">'t</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">org-latex-listings-options</span>
+<span class="w">      </span><span class="o">'</span><span class="p">((</span><span class="s">"language"</span><span class="w"> </span><span class="s">"Python"</span><span class="p">)</span>
+<span class="w">        </span><span class="p">(</span><span class="s">"style"</span><span class="w"> </span><span class="s">"mystyle"</span><span class="p">)</span>
+<span class="w">        </span><span class="p">(</span><span class="s">"numbers"</span><span class="w"> </span><span class="s">"left"</span><span class="p">)</span>
+<span class="w">        </span><span class="p">(</span><span class="s">"numberstyle"</span><span class="w"> </span><span class="s">"</span><span class="se">\\</span><span class="s">tiny</span><span class="se">\\</span><span class="s">color{gray}"</span><span class="p">)))</span>
+</pre></div>
+</div>
+
+
+<div id="outline-container-orgfdf6844" class="outline-4">
+<h4 id="orgfdf6844">Documentation Reference.</h4>
+<div class="outline-text-4" id="text-orgfdf6844">
+<p>
+I did the above following documentation found by typing in <code>EMACS</code>: <br><code>C-h v</code> <code>RET</code> <code>org-latex-listings-options</code> <code>RET</code> 
+</p>
+
+<div class="highlight"><pre><span></span><span class="nv">Original</span><span class="w"> </span><span class="nv">value</span><span class="w"> </span><span class="nv">was</span><span class="w"> </span><span class="nv">nil</span>
+
+<span class="nv">Association</span><span class="w"> </span><span class="nb">list</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">options</span><span class="w"> </span><span class="nv">for</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">latex</span><span class="w"> </span><span class="nv">listings</span><span class="w"> </span><span class="nv">package</span><span class="o">.</span>
+
+<span class="nv">These</span><span class="w"> </span><span class="nv">options</span><span class="w"> </span><span class="nv">are</span><span class="w"> </span><span class="nv">supplied</span><span class="w"> </span><span class="nv">as</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">comma-separated</span><span class="w"> </span><span class="nb">list</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">the</span>
+<span class="err">\</span><span class="nv">lstset</span><span class="w"> </span><span class="nv">command</span><span class="o">.</span><span class="w">  </span><span class="nv">Each</span><span class="w"> </span><span class="nv">element</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">association</span><span class="w"> </span><span class="nb">list</span><span class="w"> </span><span class="nv">should</span><span class="w"> </span><span class="nv">be</span>
+<span class="nv">a</span><span class="w"> </span><span class="nb">list</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nb">cons</span><span class="w"> </span><span class="nv">cell</span><span class="w"> </span><span class="nv">containing</span><span class="w"> </span><span class="nv">two</span><span class="w"> </span><span class="nv">strings:</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">the</span>
+<span class="nv">option,</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">value</span><span class="o">.</span><span class="w">  </span><span class="nv">For</span><span class="w"> </span><span class="nv">example,</span>
+
+<span class="w">  </span><span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">org-latex-listings-options</span>
+<span class="w">    </span><span class="o">'</span><span class="p">((</span><span class="s">"basicstyle"</span><span class="w"> </span><span class="s">"</span><span class="se">\\</span><span class="s">small"</span><span class="p">)</span>
+<span class="w">      </span><span class="p">(</span><span class="s">"keywordstyle"</span><span class="w"> </span><span class="s">"</span><span class="se">\\</span><span class="s">color{black}</span><span class="se">\\</span><span class="s">bfseries</span><span class="se">\\</span><span class="s">underbar"</span><span class="p">)))</span>
+<span class="w">  </span><span class="c1">; or</span>
+<span class="w">  </span><span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">org-latex-listings-options</span>
+<span class="w">    </span><span class="o">'</span><span class="p">((</span><span class="s">"basicstyle"</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">"</span><span class="se">\\</span><span class="s">small"</span><span class="p">)</span>
+<span class="w">      </span><span class="p">(</span><span class="s">"keywordstyle"</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">"</span><span class="se">\\</span><span class="s">color{black}</span><span class="se">\\</span><span class="s">bfseries</span><span class="se">\\</span><span class="s">underbar"</span><span class="p">)))</span>
+
+<span class="nv">will</span><span class="w"> </span><span class="nv">typeset</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">code</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">small</span><span class="w"> </span><span class="nv">size</span><span class="w"> </span><span class="nv">font</span><span class="w"> </span><span class="nv">with</span><span class="w"> </span><span class="nv">underlined,</span><span class="w"> </span><span class="nv">bold</span>
+<span class="nv">black</span><span class="w"> </span><span class="nv">keywords</span><span class="o">.</span>
+
+<span class="nv">Note</span><span class="w"> </span><span class="nv">that</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">same</span><span class="w"> </span><span class="nv">options</span><span class="w"> </span><span class="nv">will</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span><span class="nv">applied</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">blocks</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">all</span>
+<span class="nv">languages</span><span class="o">.</span><span class="w">  </span><span class="nv">If</span><span class="w"> </span><span class="nv">you</span><span class="w"> </span><span class="nv">need</span><span class="w"> </span><span class="nv">block-specific</span><span class="w"> </span><span class="nv">options,</span><span class="w"> </span><span class="nv">you</span><span class="w"> </span><span class="nv">may</span><span class="w"> </span><span class="nv">use</span><span class="w"> </span><span class="nv">the</span>
+<span class="nv">following</span><span class="w"> </span><span class="nv">syntax:</span>
+
+<span class="w">   </span><span class="o">#</span><span class="nv">+ATTR_LATEX:</span><span class="w"> </span><span class="nv">:options</span><span class="w"> </span><span class="nv">key1=value1,key2=value2</span>
+<span class="w">   </span><span class="o">#</span><span class="nv">+BEGIN_SRC</span><span class="w"> </span><span class="nv">&lt;LANG&gt;</span>
+<span class="w">   </span><span class="o">...</span>
+<span class="w">  </span><span class="err">\</span><span class="o">#</span><span class="nv">+END_SRC</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgeadabbe" class="outline-2">
+<h2 id="orgeadabbe">Example Org File</h2>
+<div class="outline-text-2" id="text-orgeadabbe">
+<p>
+Here's a minimal example of how your Org file might look whit these settings.
+</p>
+
+<div class="highlight"><pre><span></span>#+TITLE: Customizing Code Listings in Org-mode with LaTeX:
+#+SUBTITLE: /A Workaround for *org-latex-listings-options*/
+#+AUTHOR: Syl. Montalvo
+#+LaTeX_CLASS_OPTIONS: [a4paper, 11pt]
+#+LATEX_HEADER: \usepackage[a4paper, total={6in, 8in}]{geometry}
+#+OPTIONS: toc:nil
+#+LATEX_HEADER: \input{~/.emacs.d/customizations/setup-syl-short-report.tex}
+#+BEGIN_SRC python 
+print("Hello, World!")
+\#+END_SRC
+</pre></div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><p itemprop="keywords" class="tags">
+            <span class="tag"><a class="p-category" href="../../categories/code-blocks/" rel="tag">code blocks</a></span>
+            <span class="tag"><a class="p-category" href="../../categories/latex/" rel="tag">Latex</a></span>
+            <span class="tag"><a class="p-category" href="../../categories/listings/" rel="tag">listings</a></span>
+            <span class="tag"><a class="p-category" href="../../categories/styling/" rel="tag">styling</a></span>
+      </p>
+
+            <div class="pager hidden-print pagination">
+
+            <span class="previous pagination-item older">
+                <a href="../my-r-language-quick-reference/" rel="prev" title="My R Language Quick Reference">
+                Previous post
+                </a>
+            </span>
+
+
+            <span class="next pagination-item newer">
+Next post
+            </span>
+
+        </div>
+
+    </nav></aside></article>
+</div>
+            <script src="../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

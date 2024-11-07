@@ -6,23 +6,63 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>https://touxstone.github.io/binnacle.github.io/categories/cat_editing-pdf-latex-orgmode.xml</loc>
+  <lastmod>2024-11-07T19:31:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://touxstone.github.io/binnacle.github.io/categories/code-blocks.xml</loc>
+  <lastmod>2024-11-07T19:31:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://touxstone.github.io/binnacle.github.io/categories/latex.xml</loc>
+  <lastmod>2024-11-07T19:31:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://touxstone.github.io/binnacle.github.io/categories/listings.xml</loc>
+  <lastmod>2024-11-07T19:31:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://touxstone.github.io/binnacle.github.io/categories/styling.xml</loc>
+  <lastmod>2024-11-07T19:31:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://touxstone.github.io/binnacle.github.io/es/categories/cat_editing-pdf-latex-orgmode.xml</loc>
+  <lastmod>2024-11-07T19:31:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://touxstone.github.io/binnacle.github.io/es/categories/code-blocks.xml</loc>
+  <lastmod>2024-11-07T19:31:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://touxstone.github.io/binnacle.github.io/es/categories/latex.xml</loc>
+  <lastmod>2024-11-07T19:31:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://touxstone.github.io/binnacle.github.io/es/categories/listings.xml</loc>
+  <lastmod>2024-11-07T19:31:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://touxstone.github.io/binnacle.github.io/es/categories/styling.xml</loc>
+  <lastmod>2024-11-07T19:31:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://touxstone.github.io/binnacle.github.io/es/galleries/rss.xml</loc>
-  <lastmod>2022-08-24T21:58:00Z</lastmod>
+  <lastmod>2024-11-06T21:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://touxstone.github.io/binnacle.github.io/es/rss.xml</loc>
-  <lastmod>2022-08-24T21:58:00Z</lastmod>
+  <lastmod>2024-11-07T19:31:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://touxstone.github.io/binnacle.github.io/galleries/rss.xml</loc>
-  <lastmod>2022-08-24T21:58:00Z</lastmod>
+  <lastmod>2024-11-06T21:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://touxstone.github.io/binnacle.github.io/rss.xml</loc>
-  <lastmod>2022-08-24T21:58:00Z</lastmod>
+  <lastmod>2024-11-07T19:31:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://touxstone.github.io/binnacle.github.io/sitemap.xml</loc>
-  <lastmod>2022-08-24T21:58:00Z</lastmod>
+  <lastmod>2024-11-07T19:31:00Z</lastmod>
  </sitemap>
 </sitemapindex>

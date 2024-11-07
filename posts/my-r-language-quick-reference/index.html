@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html prefix="
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Binnacle · My R Language Quick Reference </title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" href="../../es/rss.xml">
+<link rel="canonical" href="https://touxstone.github.io/binnacle.github.io/posts/my-r-language-quick-reference/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Txe Llenne">
+<link rel="prev" href="../7-de-julio-1932/" title="7 de Julio, 1932" type="text/html">
+<link rel="next" href="../customizing-code-listings-in-org-mode-latex/" title="Customizing Code-listings In OrgMode Latex" type="text/html">
+<link rel="alternate" hreflang="es" href="../../es/posts/my-r-language-quick-reference/">
+</head>
+<body class="">
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+    <div class="hsidebar">
+        <div class="container sidebar-sticky">
+            <div class="sidebar-about">
+              <h1>
+                <a href="https://touxstone.github.io/binnacle.github.io/">
+                      <h1 id="brand"><a href="https://touxstone.github.io/binnacle.github.io/" title="Binnacle" rel="home">
+
+        <span id="blog-title">Binnacle</span>
+    </a></h1>
+
+                </a>
+              </h1>
+                <p class="lead">Hey, here my (public) binnacle point.</p>
+
+            </div>
+                <nav id="menu" role="navigation" class="sidebar-nav"><a class="sidebar-nav-item" href="../../archive.html">Archive</a>
+        <a class="sidebar-nav-item" href="../../categories/">Tags</a>
+        <a class="sidebar-nav-item" href="../../rss.xml">RSS feed</a>
+    
+    
+    </nav><footer id="footer"><span class="copyright">
+              Contents © 2024         <a href="mailto:psicotherapy@gmail.com">Txe Llenne</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            </span>
+            
+            
+        </footer>
+</div>
+    </div>
+
+    <div class="content container" id="content">
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><h1 class="post-title p-name"><a href="." class="u-url">My R Language Quick Reference</a></h1>
+
+    <span class="post-date">
+      <time class="published dt-published" datetime="2022-09-22T12:17:17+01:00" itemprop="datePublished" title="2022-09-22 12:17">2022-09-22 12:17</time></span>
+
+    
+    
+
+    <div class="e-content entry-content" itemprop="articleBody text">
+    <p>
+Just a pocket reference of a life-long friendship with a tool.
+</p>
+<!-- TEASER_END -->
+<div id="outline-container-orgb0521e6" class="outline-2">
+<h2 id="orgb0521e6">Reading Data</h2>
+<div class="outline-text-2" id="text-orgb0521e6">
+<ul class="org-ul">
+<li><a href="https://class.coursera.org/rprog-002/lecture/29">from Reading and Writing Data (part 1)</a></li>
+</ul>
+</div>
+<div id="outline-container-org8434787" class="outline-3">
+<h3 id="org8434787">Reading Data</h3>
+<div class="outline-text-3" id="text-org8434787">
+<div class="highlight"><pre><span></span><span class="n">read.table</span><span class="p">,</span><span class="w"> </span><span class="n">read.csv</span><span class="w">           </span><span class="c1">#for Reading tabular data</span>
+<span class="n">readLines</span><span class="w">                      </span><span class="c1"># for reading lines of a text file</span>
+<span class="n">source</span><span class="w">                         </span><span class="c1"># for reading in R code files (inverse of dump)</span>
+<span class="n">dget</span><span class="w">                           </span><span class="c1"># for reading in R code files (inverse of dput)</span>
+<span class="n">load</span><span class="w">                           </span><span class="c1"># for reading in saved workspaces</span>
+<span class="n">unserialize</span><span class="w">                    </span><span class="c1"># for reading single R objects in binary form</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-orgf7ccb8f" class="outline-3">
+<h3 id="orgf7ccb8f">Writing Data</h3>
+<div class="outline-text-3" id="text-orgf7ccb8f">
+<p>
+There are analogous functions for writing data to files.
+</p>
+
+<div class="highlight"><pre><span></span><span class="n">write.table</span><span class="w">                </span>
+<span class="n">writeLines</span>
+<span class="n">dump</span><span class="w"> </span>
+<span class="n">dput</span>
+<span class="n">save</span>
+<span class="n">serialize</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-orgdbf5d83" class="outline-3">
+<h3 id="orgdbf5d83">Reading Data Files with read.table</h3>
+<div class="outline-text-3" id="text-orgdbf5d83">
+<p>
+The read.table function is one of the most common used functions for reading data. It has a few important arguments:
+</p>
+<div class="highlight"><pre><span></span><span class="n">file</span><span class="w">             </span><span class="c1"># the name of a file, or a connection.</span>
+<span class="n">header</span><span class="w">           </span><span class="c1"># logical indicating how the columns are separated</span>
+<span class="n">sep</span><span class="w">              </span><span class="c1"># a string indicating how the columns are separated.</span>
+<span class="n">colClasses</span><span class="w">       </span><span class="c1"># a character vector indicating the class of each column in the dataset.</span>
+<span class="n">nrows</span><span class="w">            </span><span class="c1"># the number of rows in the dataset.</span>
+<span class="n">comment.char</span><span class="w">     </span><span class="c1"># a character string indicating the comment character.</span>
+<span class="n">skip</span><span class="w">             </span><span class="c1"># the number of lines to skip from the beginning</span>
+<span class="n">stringsAsFactors</span><span class="w"> </span><span class="c1"># should character variables be coded as factors? </span>
+</pre></div>
+</div>
+<div id="outline-container-org820c003" class="outline-4">
+<h4 id="org820c003">read.table</h4>
+<div class="outline-text-4" id="text-org820c003">
+<p>
+For small to moderate sized datasets, you can usually call read.table without specifying any other arguments.
+</p>
+<div class="highlight"><pre><span></span><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.table</span><span class="p">(</span><span class="s">"foo.txt"</span><span class="p">)</span>
+</pre></div>
+<p>
+R will automatically: <br></p>
+<ul class="org-ul">
+<li>Skip lines that begin with a #</li>
+<li>Figure out how many rows there are (and how much memory needs to be allocated)</li>
+<li>Figure what type of variable is in each column of the table telling R all these things directly makes R run faster and more efficiently.</li>
+<li>read.csv is identical to read.table except that the default separator is a comma.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org867a09f" class="outline-4">
+<h4 id="org867a09f">Calculating Memory Requirements.</h4>
+<div class="outline-text-4" id="text-org867a09f">
+<p>
+I have a data frame with 1'500,000 and 120 columns, all of which are numeric data. Roughly, how much memory is required to store this data frame? <br>
+1'500,000 x 120 x 8 bytes/numeric <br>
+     = 1440000000 bytes <br>
+     = 1440000000 /220 bytes/MB <br>
+     = 1373.29 MB <br>
+     = 1.34 GB  <br></p>
+</div>
+</div>
+
+
+<div id="outline-container-orgfeef995" class="outline-4">
+<h4 id="orgfeef995">Reading Lines of a Text File.</h4>
+<div class="outline-text-4" id="text-orgfeef995">
+<p>
+<b>readLines</b> can be useful for reading in lines of webpages.
+</p>
+<div class="highlight"><pre><span></span><span class="c1">## This might take time</span>
+<span class="n">con</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">url</span><span class="p">(</span><span class="s">"http://www.jhsph.edu"</span><span class="p">,</span><span class="w"> </span><span class="s">"r"</span><span class="p">)</span>
+<span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">readLines</span><span class="p">(</span><span class="n">con</span><span class="p">)</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">head</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">"&lt;!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\"&gt;"</span>
+<span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="w"> </span><span class="s">""</span>
+<span class="p">[</span><span class="m">3</span><span class="p">]</span><span class="w"> </span><span class="s">"&lt;html&gt;"</span>
+<span class="p">[</span><span class="m">4</span><span class="p">]</span><span class="w"> </span><span class="s">"&lt;head&gt;"</span>
+<span class="p">[</span><span class="m">5</span><span class="p">]</span><span class="w"> </span><span class="s">"</span><span class="err">\t&lt;meta http-equiv=\</span><span class="s">"</span><span class="n">Content</span><span class="o">-</span><span class="n">Type</span>\<span class="s">"</span><span class="err"> content=\</span><span class="s">"</span><span class="n">text</span><span class="o">/</span><span class="n">html</span><span class="p">;</span><span class="n">charset</span><span class="o">=</span><span class="n">utf</span><span class="m">-8</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org07ec24a" class="outline-2">
+<h2 id="org07ec24a">Control Structures</h2>
+<div class="outline-text-2" id="text-org07ec24a">
+<p>
+Control structures in R allow you to control the flow of execution of the program, depending on run-time conditions. common structures are:
+</p>
+
+<div class="highlight"><pre><span></span><span class="n">if</span><span class="p">,</span><span class="w"> </span><span class="n">else</span><span class="w">      </span><span class="c1"># testing a condition.</span>
+<span class="n">for</span><span class="w">           </span><span class="c1"># execute a loop a fixed number of times.</span>
+<span class="n">while</span><span class="w">         </span><span class="c1"># execute a loop while a condition is true.</span>
+<span class="n">repeat</span><span class="w">        </span><span class="c1"># execute an infinite loop.</span>
+<span class="n">break</span><span class="w">         </span><span class="c1"># break the execution of a loop.</span>
+<span class="n">next</span><span class="w">          </span><span class="c1"># skip an interaction of a loop.</span>
+<span class="n">return</span><span class="w">        </span><span class="c1"># exit a function.</span>
+</pre></div>
+
+<p>
+Most control structures are not used in interactive sessions, but rather when writing functions or longer expressions.
+</p>
+</div>
+
+<div id="outline-container-orgc8db2a8" class="outline-3">
+<h3 id="orgc8db2a8">Control Structures: <code>if</code>
+</h3>
+<div class="outline-text-3" id="text-orgc8db2a8">
+<div class="highlight"><pre><span></span><span class="nf">if</span><span class="p">(</span><span class="o">&lt;</span><span class="n">condition</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="c1">## do something</span>
+<span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="c1">## do something else</span>
+<span class="p">}</span>
+
+<span class="nf">if</span><span class="p">(</span><span class="o">&lt;</span><span class="n">condition</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="c1">## do something</span>
+<span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="nf">if </span><span class="p">(</span><span class="o">&lt;</span><span class="n">condition</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="c1">## do something different</span>
+<span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="c1">## do something different</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org1022dde" class="outline-3">
+<h3 id="org1022dde">Control Structures: <code>for</code>
+</h3>
+<div class="outline-text-3" id="text-org1022dde">
+<p>
+<b>for</b> loops take an interator variable and assign it succesive values from a sequence or vector. <b>For</b> loops are most commonly used for iterating over the elements of an object (list, vector, etc.)
+</p>
+<div class="highlight"><pre><span></span><span class="nf">for</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+<p>
+This loop takes the <b>i</b> variable and in each iteration of the loop gives it values 1,2,3, …, 10, and then exits.
+</p>
+<div class="highlight"><pre><span></span><span class="c1">## These 3 *for* loops have the same behaviour</span>
+<span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"a"</span><span class="p">,</span><span class="w"> </span><span class="s">"b"</span><span class="p">,</span><span class="w"> </span><span class="s">"c"</span><span class="p">,</span><span class="w"> </span><span class="s">"d"</span><span class="p">)</span>
+<span class="nf">for</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="p">}</span>
+
+<span class="c1">## it create a vector based on the var length and do the same as in the previous.</span>
+<span class="nf">for</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">seq_along</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="p">}</span>
+
+<span class="c1">## Here we got a different index variable, its a letter. As the index variable is going to be taking values from the vector itself, there is not reason why the index variable has to be an integer.</span>
+<span class="nf">for</span><span class="p">(</span><span class="n">letter</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="p">}</span>
+
+<span class="c1">## This version is more compact.</span>
+<span class="nf">for</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">)</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+
+
+<div id="outline-container-org0b528b8" class="outline-4">
+<h4 id="org0b528b8">Nested <code>for</code> loops.</h4>
+<div class="outline-text-4" id="text-org0b528b8">
+<p>
+<code>for</code> loops can be nested. 
+Though, be careful when nesting. Nesting beyond 2-3 levels is often very difficult to read/understand.
+</p>
+<div class="highlight"><pre><span></span><span class="c1">#Here an example:</span>
+<span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>
+<span class="nf">for</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">seq_len</span><span class="p">(</span><span class="nf">nrow</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nf">for</span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">seq_len</span><span class="p">(</span><span class="nf">ncol</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">])</span>
+<span class="w">         </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org067c886" class="outline-3">
+<h3 id="org067c886">Control Structures: <code>while</code>
+</h3>
+<div class="outline-text-3" id="text-org067c886">
+<p>
+While loops begin by testing a condition. If it is true, then they execute the loop body. Once the loop body is executed, the condition is tested again, and so forth.
+</p>
+
+<p>
+-PS. Conditions are always evaluated from left to right.
+</p>
+<div class="highlight"><pre><span></span><span class="n">z</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">5</span>
+
+<span class="nf">while</span><span class="p">(</span><span class="n">z</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="m">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nf">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="w">        </span><span class="n">coin</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rbinom</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">0.5</span><span class="p">)</span>
+
+<span class="w">        </span><span class="nf">if</span><span class="p">(</span><span class="n">coin</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">##random walk</span>
+<span class="w">                </span><span class="n">z</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">z</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org0395e84" class="outline-3">
+<h3 id="org0395e84">Control Structures: <code>repeat</code>
+</h3>
+<div class="outline-text-3" id="text-org0395e84">
+<p>
+Repeat initiates an infinite loop; these are not commonly used in statistical applications but they do have their uses. The only way to exit a <code>repeat</code> loop is to call a <code>break</code>.
+</p>
+
+<p>
+-Better to set a hard limit on the number of iterations (e.g. using a <code>for</code> loop) and then report whether convergence was achieved or not.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4292b60" class="outline-3">
+<h3 id="org4292b60">Control Structures: <code>next, return</code> .</h3>
+<div class="outline-text-3" id="text-org4292b60">
+<div class="highlight"><pre><span></span><span class="nf">for</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nf">if</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="m">20</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                 </span><span class="c1">## Skip the first 20 iterations</span>
+<span class="w">                 </span><span class="n">next</span>
+<span class="w">         </span><span class="p">}</span>
+<span class="w">         </span><span class="c1">## Do something here</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>
+<code>return</code> signals that a function should exit and return a given value.
+</p>
+
+<ul class="org-ul">
+<li>Summary:
+<ul class="org-ul">
+<li>Control Structures like <code>if</code>, <code>while</code> and <code>for</code> allow us to control the flow of an <b>R</b> program.</li>
+<li>Infinite loops should generally be avoided, even if they are theoretically correct.</li>
+<li>Control Structures mentioned here are primarily useful for writing programs; for command line interactive work, the *apply functions are more useful.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8f88240" class="outline-2">
+<h2 id="org8f88240">Functions</h2>
+<div class="outline-text-2" id="text-org8f88240">
+<p>
+Functions represent some of the most powerful aspects of the <b>R</b> language. It's in some way the transition of the user of <b>R</b> into a kind of programmer of <b>R</b>.
+</p>
+
+<ul class="org-ul">
+<li>Basics about functions:
+<ul class="org-ul">
+<li>Functions are created using the function () directive and are stored as <b>R</b> objects.</li>
+<li>Functions are "first class objects", which means that they can be treated much like any other <b>R</b> object.</li>
+<li>Functions can be nested, so that you can define a function inside another function. The return value of a function is the last expression in the function body to be evaluated.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="n">f</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="o">&lt;</span><span class="n">argument</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">## Do something interesting</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+
+<div id="outline-container-org358f61a" class="outline-4">
+<h4 id="org358f61a">Defining a Function, Lazy Evaluation.</h4>
+<div class="outline-text-4" id="text-org358f61a">
+<p>
+Arguments to functions are evaluated lazily, so they are evaluated only as needed.
+</p>
+<div class="highlight"><pre><span></span><span class="n">f</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="n">a</span><span class="o">^</span><span class="m">2</span>
+<span class="p">}</span>
+<span class="nf">f</span><span class="p">(</span><span class="m">2</span><span class="p">)</span>
+
+<span class="c1">## [1] 4</span>
+</pre></div>
+<p>
+This function never actually uses the argument b, so calling <b>f(2)</b> will not produce an error because the 2 gets positionally matched to <b>a</b>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9c42ab3" class="outline-3">
+<h3 id="org9c42ab3">Creating Functions.</h3>
+<div class="outline-text-3" id="text-org9c42ab3">
+<p>
+Here a simple example:
+</p>
+<div class="highlight"><pre><span></span><span class="n">add2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>
+Here another example, a function that will take a vector of numbers and return the subset of the vector that's above the value of another one number.
+</p>
+<div class="highlight"><pre><span></span><span class="n">aboven</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">n</span>
+<span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="n">use</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>
+But, suppose we need to specify a value n by default, let's say 10
+</p>
+<div class="highlight"><pre><span></span><span class="n">above10</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">use</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">n</span>
+<span class="w">        </span><span class="n">x</span><span class="p">[</span><span class="n">use</span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+</pre></div>
+
+<p>
+Here a screen-shot with the above examples.
+</p>
+
+
+<div id="orge4eccb3" class="figure">
+<p><img src="https://dl.dropboxusercontent.com/u/59714974/R-coursima/firstRfunct.png" alt="firstRfunct.png"></p>
+<p><span class="figure-number">Figure 1: </span>Here what an emacs-R buffer with the above examples looks like.</p>
+</div>
+
+
+
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">foo</span><span class="w"> </span><span class="p">(</span><span class="nv">x</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">*</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org9734dd5" class="outline-3">
+<h3 id="org9734dd5">Lexical Scoping</h3>
+<div class="outline-text-3" id="text-org9734dd5">
+<p>
+Searching for the value for a free variable
+</p>
+<ul class="org-ul">
+<li>If the value of a symbol is not found in the environment in which a function was defined, then the search is continued in the <b>parent environment.</b>
+</li>
+<li>The search continues down the sequence of parent environments until we hit the top-level environment, this is usually the global environment (workspace) or the namespace of a package.</li>
+<li>After the top-level environment, the search continues down the search list until we hit the <b>empty environment</b>. If a value for a given symbol cannot be found once the empty environment is arrived at, then an error is thrown.</li>
+</ul>
+<p>
+Let's have a look at this example:
+</p>
+<div class="highlight"><pre><span></span><span class="n">make.power</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">pow</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="n">x</span><span class="o">^</span><span class="n">n</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">pow</span><span class="w"> </span>
+<span class="p">}</span>
+</pre></div>
+
+<p>
+This function returns another function as its value.
+</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="n">cube</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">make.power</span><span class="p">(</span><span class="m">3</span><span class="p">)</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">square</span><span class="w"> </span><span class="o">&lt;-</span><span class="nf">make.power</span><span class="p">(</span><span class="m">2</span><span class="p">)</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">cube</span><span class="p">(</span><span class="m">3</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">27</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">square</span><span class="p">(</span><span class="m">3</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">9</span><span class="w"> </span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-orga6d54e5" class="outline-3">
+<h3 id="orga6d54e5">Exploring a Function Closure.</h3>
+<div class="outline-text-3" id="text-orga6d54e5">
+<p>
+So, how do you know what's in a function's environment?. 
+You can look at the environment the function was defined, by calling the LS function.
+</p>
+
+<div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="nf">ls</span><span class="p">(</span><span class="nf">environment</span><span class="p">(</span><span class="n">cube</span><span class="p">))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">"n"</span><span class="w"> </span><span class="s">"pow"</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="s">"n"</span><span class="p">,</span><span class="w"> </span><span class="nf">environment</span><span class="p">(</span><span class="n">cube</span><span class="p">))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">3</span>
+
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">ls</span><span class="p">(</span><span class="nf">environment</span><span class="p">(</span><span class="n">square</span><span class="p">))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">"n"</span><span class="w"> </span><span class="s">"pow"</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="s">"n"</span><span class="p">,</span><span class="w"> </span><span class="nf">environment</span><span class="p">(</span><span class="n">square</span><span class="p">))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org8ca17e9" class="outline-3">
+<h3 id="org8ca17e9">Lexical vs Dynamic.</h3>
+<div class="outline-text-3" id="text-org8ca17e9">
+<div class="highlight"><pre><span></span><span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">10</span>
+<span class="n">f</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">2</span>
+<span class="n">y</span><span class="o">^</span><span class="m">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">g</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>
+What's the value of:
+</p>
+
+<div class="highlight"><pre><span></span><span class="nf">f</span><span class="p">(</span><span class="m">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org32d25a0" class="outline-2">
+<h2 id="org32d25a0">Vectorized Operations.</h2>
+<div class="outline-text-2" id="text-org32d25a0">
+<p>
+Many operations in <b>R</b> are <b>vectorized</b> making code more efficient.
+</p>
+
+<p>
+Here a couple of examples from my R box.
+</p>
+
+
+<div id="org5e912c4" class="figure">
+<p><img src="https://dl.dropboxusercontent.com/u/59714974/R-coursima/vectorized-oper.png" alt="vectorized-oper.png"></p>
+<p><span class="figure-number">Figure 2: </span>Vectorized Lineal Operations in <b>R</b></p>
+</div>
+
+
+<div id="orge33638f" class="figure">
+<p><img src="https://dl.dropboxusercontent.com/u/59714974/R-coursima/vectorized-matr-oper.png" alt="vectorized-matr-oper.png"></p>
+<p><span class="figure-number">Figure 3: </span>Vectorized Matrix Operations in <b>R</b>.</p>
+</div>
+
+<p>
+As seen on the screen shoots operations are performed in parallel, literally element by element.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org37c02fd" class="outline-2">
+<h2 id="org37c02fd">Dates and Times in R.</h2>
+<div class="outline-text-2" id="text-org37c02fd">
+<p>
+<b>R</b> has developed a special representation of dates and times.
+</p>
+<ul class="org-ul">
+<li>Dates are represented by the Date class.</li>
+<li>Times are represented by the POSIXct or the POSIXlt class.</li>
+<li>Dates are stored internally as the number of days since 1970-01-01</li>
+<li>Times are stored internally as the number of seconds since 1970-01-01.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf807817" class="outline-2">
+<h2 id="orgf807817">Loop Functions.</h2>
+<div class="outline-text-2" id="text-orgf807817">
+<p>
+<b>Loop</b> functions are some of the most powerful functions in the <b>R</b> language and they make it kind of very easy to use, specially in an interactive setting.
+</p>
+</div>
+<div id="outline-container-org0dc9a59" class="outline-3">
+<h3 id="org0dc9a59">Looping on the Command Line.</h3>
+<div class="outline-text-3" id="text-org0dc9a59">
+<p>
+Writing <b>for</b>, <b>while</b> loops is useful when programming but not particularly on the command line. There are some functions which implement looping to make it easier.
+</p>
+
+<ul class="org-ul">
+<li>lapply: Loop over a list and evaluate a function on each element.</li>
+<li>sapply: Same as lapply but try to simplify the result.</li>
+<li>apply: Apply a function over the margins of an array.</li>
+<li>tapply: Apply a function over subsets of a vector.</li>
+<li>mapply: Multivariate version of lapply.</li>
+</ul>
+<p>
+An auxiliary function <code>split</code> is also useful, particularly in conjunction with <code>lapply</code>.
+</p>
+</div>
+
+<div id="outline-container-orgd3fa42d" class="outline-4">
+<h4 id="orgd3fa42d"><code>lapply</code></h4>
+<div class="outline-text-4" id="text-orgd3fa42d">
+<p>
+<b>lapply</b> takes three arguments: (1) a list x; (2) a function (or the name of the function) FUN; (3) other argument via its …argument. If x is not a list, it will be coerced to a list using as.list.
+</p>
+
+<div class="highlight"><pre><span></span><span class="nf">function </span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">FUN</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">        </span><span class="n">FUN</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">match.fun</span><span class="p">(</span><span class="n">FUN</span><span class="p">)</span>
+<span class="w">        </span><span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">is.vector</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nf">is.object</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="w">            </span><span class="n">X</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.list</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="w">        </span><span class="nf">.Internal</span><span class="p">(</span><span class="nf">lapply</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">FUN</span><span class="p">))</span>
+<span class="p">}</span>
+<span class="o">&lt;</span><span class="n">bytecode</span><span class="o">:</span><span class="w"> </span><span class="mh">0x7ff7a1951c00</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">environment</span><span class="o">:</span><span class="w"> </span><span class="n">namespace</span><span class="o">:</span><span class="n">base</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org97d28ae" class="outline-4">
+<h4 id="org97d28ae"><code>split</code></h4>
+<div class="outline-text-4" id="text-org97d28ae">
+<p>
+<b>split</b> takes a vector or other objects and splits it into groups determined by factor or list of factors.
+</p>
+
+<div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="nf">str</span><span class="p">(</span><span class="n">split</span><span class="p">)</span>
+<span class="nf">function </span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">drop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">)</span><span class="w"> </span>
+</pre></div>
+<ul class="org-ul">
+<li>
+<b>x</b> is a vector (or list) or data frame</li>
+<li>
+<b>f</b> is a factor (or coerced to one) or a list of factors.</li>
+<li>
+<b>drop</b> indicates whether empty factors levels should be dropped.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgca6c140" class="outline-4">
+<h4 id="orgca6c140">Splitting on More than One Level.</h4>
+<div class="outline-text-4" id="text-orgca6c140">
+
+<div id="org64db268" class="figure">
+<p><img src="https://dl.dropboxusercontent.com/u/59714974/R-coursima/splitting-on-more-levels.png" alt="splitting-on-more-levels.png"></p>
+<p><span class="figure-number">Figure 4: </span>Splitting on more than one level.</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org49a18fb" class="outline-4">
+<h4 id="org49a18fb"><code>mapply</code></h4>
+<div class="outline-text-4" id="text-org49a18fb">
+<p>
+<b>mapply</b> is a multivariate apply of sorts which applies a function in parallel over a set of arguments.
+</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="nf">str</span><span class="p">(</span><span class="n">mapply</span><span class="p">)</span>
+<span class="nf">function </span><span class="p">(</span><span class="n">FUN</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">,</span><span class="w"> </span><span class="n">MoreArgs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">SIMPLIFY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">USE.NAMES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+<ul class="org-ul">
+<li>FUN is a function to apply.</li>
+<li>… contains arguments to apply over.</li>
+<li>MoreArgs is a list of others arguments to FUN.</li>
+<li>SIMPLIFY indicates whether the result should be simplified.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0acb1ce" class="outline-4">
+<h4 id="org0acb1ce">Vectorizing a Function.</h4>
+</div>
+</div>
+
+<div id="outline-container-org4efd92d" class="outline-3">
+<h3 id="org4efd92d">The <code>str</code> Function.</h3>
+<div class="outline-text-3" id="text-org4efd92d">
+<p>
+This is the most important function in all <b>R</b>.
+<code>str</code>: Compactly display the internal structure of an <b>R</b> object.
+</p>
+<ul class="org-ul">
+<li>A diagnostic function and an alternative to <b>summary</b>.</li>
+<li>It is especially well suited to compactly display the (abbreviated) contents of (possibly nested) lists.</li>
+<li>Roughly one line per basic object.</li>
+</ul>
+<p>
+The basic goal of <b>str</b> (of structure) is to answer the question, what's in this object.?
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4029b28" class="outline-2">
+<h2 id="org4029b28">Generating Random Numbers (Simulation)</h2>
+<div class="outline-text-2" id="text-org4029b28">
+<p>
+Functions for probability distributions in <b>R</b>.
+</p>
+<ul class="org-ul">
+<li>
+<b>rnom</b>  : generate random Normal variates with a given mean standard deviation.</li>
+<li>
+<b>dnorm</b> : evaluate the normal probability density (with a given mean/SD) at a point (or vector of points).</li>
+<li>
+<b>pnorm</b> : evaluate the cumulative distribution function for a Normal distribution.</li>
+<li>
+<b>rpois</b> : generate random Poisson variates with a given rate.</li>
+</ul>
+<p>
+Probability distribution usually have four functions associated with them. The functions are prefixed with a:
+</p>
+<ul class="org-ul">
+<li>
+<b>d</b> for density,</li>
+<li>
+<b>r</b> for random number generation,</li>
+<li>
+<b>p</b> for cumulative distribution,</li>
+<li>
+<b>q</b> for quantile function.</li>
+</ul>
+<p>
+So, every distribution has these four types of functions, so for the gamma distribution, there'll be a <b>dgamma</b>, <b>pgamma</b> and a <b>qgamma</b> function. And for the Poisson distribution there's the <b>rpois</b> <b>dpois</b> <b>ppois</b> and <b>qpois</b> functions. 
+</p>
+
+<p>
+Working with the Normal distribution requires using these four functions.
+</p>
+<div class="highlight"><pre><span></span><span class="nf">dnorm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">sd</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">log</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="nf">pnorm</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">sd</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">lower.tail</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">log.p</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="nf">qnorm</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">sd</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">lower.tail</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">log.p</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">sd</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</pre></div>
+
+<p>
+They each take a number of different parameters. All the functions required that you specify the <b>mean</b> and the standard deviation (<b>sd</b>), because that's what specifies the actual probability distribution. If you do not specify them, the default values are a standard normal distribution, which has <b>mean</b> = 0 and <b>standard deviation</b> one.
+</p>
+
+<p>
+So just to be more explicit, if phi is the cumulative distribution for the standard normal distribution, then <b>pnorm</b> is equal to <b>phi</b> and <b>qnorm</b> is equal then to the inverse of <b>phi</b>.
+</p>
+<ul class="org-ul">
+<li>If Φ is the cumulative distribution function for <b>a standard Normal distribution</b>, then <b>pnorm(q)</b> = Φ(q) and <b>qnorm(p)</b> = Φ<sup>-1</sup>(p).</li>
+</ul>
+<p>
+In the following example, <b>x</b> will be a ten variables random normal distribution vector with a roughly 20 as <b>mean</b> and 2 as <b>standard deviation</b> (<b>sd</b>):
+</p>
+
+<div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">x</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">18.37391</span><span class="w"> </span><span class="m">22.46904</span><span class="w"> </span><span class="m">19.26000</span><span class="w"> </span><span class="m">17.73401</span><span class="w"> </span><span class="m">20.12377</span><span class="w"> </span><span class="m">19.75070</span><span class="w"> </span><span class="m">21.50743</span><span class="w"> </span><span class="m">20.87168</span>
+<span class="p">[</span><span class="m">9</span><span class="p">]</span><span class="w"> </span><span class="m">19.92878</span><span class="w"> </span><span class="m">17.74464</span>
+</pre></div>
+</div>
+
+<div id="outline-container-org9b84661" class="outline-4">
+<h4 id="org9b84661">The <code>set.seed</code> Function.</h4>
+<div class="outline-text-4" id="text-org9b84661">
+<p>
+Any time you simulate random numbers, from any distribution, for any purpose, it's very important that you set the random number generator seed (notice numbers are not actually random but they appear random, that's the important thing) so the idea is that if you wanted to generate the same set of random numbers again, you could if wanted using the <b>set.seed</b> function, so anytime you set the seed it kind of sets the sequence of random variable that's going to occur and when you reset you set the sequence to go back to, allowing you debug, checking, or basically reproducing the problematic situation.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1dbc823" class="outline-3">
+<h3 id="org1dbc823">Generating Poisson Data.</h3>
+<div class="outline-text-3" id="text-org1dbc823">
+<ul class="org-ul">
+<li>In <b>probability theory</b>, a <b>Poisson process</b> (named after the French mathematician <a href="http://en.wikipedia.org/wiki/Sim%C3%A9on_Denis_Poisson">Siméon Denis Poisson</a>) is a <b>stochastic process</b> or <b>random process</b> (widely used) : a collection of random values, or the mathematical representation of, some random system or variable over time (indeterminacy). Those several (often infinitely many) directions in which the process may evolve.</li>
+</ul>
+<p>
+Generating Poisson data:
+</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="nf">rpois</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="c1">## rpois(count, mean) creates a distribution where count is the numbers to create &amp; mean you'd like those to come close to</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span>
+
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">rpois</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">2</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span>
+
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">rpois</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">21</span><span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">21</span><span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="m">20</span>
+
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">ppois</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="c1">## Cumulative distribution</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">0.6766764</span><span class="w"> </span><span class="c1">## Pr(x &lt;= 2)</span>
+
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">ppois</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">0.947347</span><span class="w"> </span><span class="c1">## Pr(x &lt;= 4)</span>
+
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">ppois</span><span class="p">(</span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">0.9954662</span><span class="w"> </span><span class="c1">## Pr(x &lt;= 6)</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-orgb95bc87" class="outline-3">
+<h3 id="orgb95bc87">Generating Random Numbers From a Linear Model.</h3>
+<div class="outline-text-3" id="text-orgb95bc87">
+<p>
+Now, suppose we want to simulate from the following linear model: <br><img src="https://dl.dropboxusercontent.com/u/59714974/R-coursima/gen-rnumfromlm.png" alt="gen-rnumfromlm.png"></p>
+
+<div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="nf">set.seed</span><span class="p">(</span><span class="m">20</span><span class="p">)</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="m">100</span><span class="p">)</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0.5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="w">    </span><span class="n">Min.</span><span class="w"> </span><span class="m">1</span><span class="n">st</span><span class="w"> </span><span class="n">Qu</span><span class="w"> </span><span class="n">Median</span>
+<span class="m">-6.4080</span><span class="w"> </span><span class="m">-1.5400</span><span class="w"> </span><span class="m">0.7689</span><span class="w"> </span><span class="m">0.6893</span><span class="w"> </span><span class="m">2.9300</span><span class="w"> </span><span class="m">6.5050</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org94d4a47" class="outline-2">
+<h2 id="org94d4a47">The R Profiler</h2>
+<div class="outline-text-2" id="text-org94d4a47">
+<p>
+Profiling is a systematic way to examine different parts of a program, useful when trying to optimise your code. Profiling is better than guessing. 
+But, "we should forget about small efficiency, say about 97% of the time: premature optimisation is the root of a evil" (by Donald Knuth).
+</p>
+
+<ul class="org-ul">
+<li>
+<code>Rprof()</code> keeps track of the function call stack at regularly sampled intervals and tabulates how much time is spend in each function.</li>
+<li>Default sampling interval is 0.02 seconds.</li>
+<li>The <code>summaryRprof()</code> function tabulates the R profiler output and calculates how much time is spend in which function.</li>
+<li>There are two methods for normalising data "by.total": divides the time spend in each function by the total run time; (in the 4th week quiz, a question showed a one-function script and asked for guessing, before running the script, what percentage it would report if we tried to normalise the script by.total, —answer: 100%, because it's a just one function case); "by.self": does the same but subtracts out time spent in functions above in the call stack.</li>
+</ul>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-orgd5e641a" class="outline-2">
+<h2 id="orgd5e641a">Appendix. A, Some key shot views.</h2>
+<div class="outline-text-2" id="text-orgd5e641a">
+<p>
+Just as a reminder by <a href="http://www.slideshare.net/ajayohri/learning-r-and-teaching-r">Ajay Ohri</a> about where on checking out for <a href="http://image.slidesharecdn.com/learningr-140614015522-phpapp01/95/slide-20-1024.jpg?cb=1402728969">R views</a>. <br></p>
+<ul class="org-ul">
+<li>PS. I am, e.g. at present, keen on going further into Bayesian Analysis, but still in need of some training support.</li>
+</ul>
+<p>
+The next 4 slides is for a shot view for my 25 R commands, my 25 next &amp; my 15 favourites R packages.
+</p>
+
+<ul class="org-ul">
+<li><img src="http://image.slidesharecdn.com/learningr-140614015522-phpapp01/95/slide-7-1024.jpg" alt="slide-7-1024.jpg"></li>
+
+<li><img src="http://image.slidesharecdn.com/learningr-140614015522-phpapp01/95/slide-15-1024.jpg" alt="slide-15-1024.jpg"></li>
+
+<li><img src="http://image.slidesharecdn.com/learningr-140614015522-phpapp01/95/slide-16-1024.jpg" alt="slide-16-1024.jpg"></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org59dca38" class="outline-2">
+<h2 id="org59dca38">Appendix. B Short List of the Most Useful Commands.</h2>
+<div class="outline-text-2" id="text-org59dca38">
+</div>
+<div id="outline-container-org0761a57" class="outline-3">
+<h3 id="org0761a57">Input and Display</h3>
+<div class="outline-text-3" id="text-org0761a57">
+<div class="highlight"><pre><span></span><span class="c1">#read files with labels in first row</span>
+<span class="nf">read.table</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span><span class="w">           </span><span class="c1">#read a tab or space delimited file</span>
+<span class="nf">read.table</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">','</span><span class="p">)</span><span class="w">   </span><span class="c1">#read csv files</span>
+
+<span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">16</span><span class="w"> </span><span class="p">)</span><span class="w">                           </span><span class="c1">#create a data vector with specified elements</span>
+<span class="n">y</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span><span class="w">                                  </span><span class="c1">#create a data vector with elements 1-10</span>
+<span class="n">n</span><span class="o">=</span><span class="m">10</span>
+<span class="n">x1</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="w">                             </span><span class="c1">#create a n item vector of random normal deviates</span>
+<span class="n">y1</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="o">+</span><span class="n">n</span><span class="w">                           </span><span class="c1">#create another n item vector that has n added to each random uniform distribution</span>
+<span class="n">z</span><span class="o">=</span><span class="nf">rbinom</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">size</span><span class="p">,</span><span class="n">prob</span><span class="p">)</span><span class="w">                      </span><span class="c1">#create n samples of size "size" with probability prob from the binomial</span>
+<span class="n">vect</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="w">                                </span><span class="c1">#combine them into one vector of length 2n</span>
+<span class="n">mat</span><span class="o">=</span><span class="nf">cbind</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="w">                             </span><span class="c1">#combine them into a n x 2 matrix</span>
+<span class="n">mat</span><span class="p">[</span><span class="m">4</span><span class="p">,</span><span class="m">2</span><span class="p">]</span><span class="w">                                   </span><span class="c1">#display the 4th row and the 2nd column</span>
+<span class="n">mat</span><span class="p">[</span><span class="m">3</span><span class="p">,]</span><span class="w">                                    </span><span class="c1">#display the 3rd row</span>
+<span class="n">mat</span><span class="p">[,</span><span class="m">2</span><span class="p">]</span><span class="w">                                    </span><span class="c1">#display the 2nd column</span>
+<span class="nf">subset</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span><span class="n">logical</span><span class="p">)</span><span class="w">                    </span><span class="c1">#those objects meeting a logical criterion</span>
+<span class="nf">subset</span><span class="p">(</span><span class="n">data.df</span><span class="p">,</span><span class="n">select</span><span class="o">=</span><span class="n">variables</span><span class="p">,</span><span class="n">logical</span><span class="p">)</span><span class="w">   </span><span class="c1">#get those objects from a data frame that meet a criterion</span>
+<span class="n">data.df</span><span class="p">[</span><span class="n">data.df</span><span class="o">=</span><span class="n">logical</span><span class="p">]</span><span class="w">                   </span><span class="c1">#yet another way to get a subset</span>
+<span class="n">x</span><span class="p">[</span><span class="nf">order</span><span class="p">(</span><span class="n">x</span><span class="o">$</span><span class="n">B</span><span class="p">),]</span><span class="w">                             </span><span class="c1">#sort a dataframe by the order of the elements in B</span>
+<span class="n">x</span><span class="p">[</span><span class="nf">rev</span><span class="p">(</span><span class="nf">order</span><span class="p">(</span><span class="n">x</span><span class="o">$</span><span class="n">B</span><span class="p">)),]</span><span class="w">                        </span><span class="c1">#sort the dataframe in reverse order </span>
+
+<span class="n">browse.workspace</span><span class="w">                           </span><span class="c1">#a menu command that creates a window with information about all variables in the workspace</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org9d287e5" class="outline-3">
+<h3 id="org9d287e5">Moving around.</h3>
+<div class="outline-text-3" id="text-org9d287e5">
+<div class="highlight"><pre><span></span><span class="nf">ls</span><span class="p">()</span><span class="w">                                      </span><span class="c1">#list the variables in the workspace</span>
+<span class="nf">rm</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">                                     </span><span class="c1">#remove x from the workspace</span>
+<span class="nf">rm</span><span class="p">(</span><span class="n">list</span><span class="o">=</span><span class="nf">ls</span><span class="p">())</span><span class="w">                             </span><span class="c1">#remove all the variables from the workspace</span>
+<span class="nf">attach</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span><span class="w">                               </span><span class="c1">#make the names of the variables in the matrix or data frame available in the workspace</span>
+<span class="nf">detach</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span><span class="w">                               </span><span class="c1">#releases the names</span>
+<span class="n">new</span><span class="o">=</span><span class="n">old</span><span class="p">[,</span><span class="o">-</span><span class="n">n</span><span class="p">]</span><span class="w">                              </span><span class="c1">#drop the nth column</span>
+<span class="n">new</span><span class="o">=</span><span class="n">old</span><span class="p">[</span><span class="n">n</span><span class="p">,]</span><span class="w">                               </span><span class="c1">#drop the nth row</span>
+<span class="n">new</span><span class="o">=</span><span class="nf">subset</span><span class="p">(</span><span class="n">old</span><span class="p">,</span><span class="n">logical</span><span class="p">)</span><span class="w">                   </span><span class="c1">#select those cases that meet the logical condition</span>
+<span class="n">complete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">subset</span><span class="p">(</span><span class="n">data.df</span><span class="p">,</span><span class="nf">complete.cases</span><span class="p">(</span><span class="n">data.df</span><span class="p">))</span><span class="w"> </span><span class="c1">#find those cases with no missing values</span>
+<span class="n">new</span><span class="o">=</span><span class="n">old</span><span class="p">[</span><span class="n">n1</span><span class="o">:</span><span class="n">n2</span><span class="p">,</span><span class="n">n3</span><span class="o">:</span><span class="n">n4</span><span class="p">]</span><span class="w">                      </span><span class="c1">#select the n1 through n2 rows of variables n3 through n4).</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org7c32985" class="outline-3">
+<h3 id="org7c32985">Distributions</h3>
+<div class="outline-text-3" id="text-org7c32985">
+<div class="highlight"><pre><span></span><span class="nf">beta</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<span class="nf">gamma</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nf">choose</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">)</span>
+<span class="nf">factorial</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="nf">dnorm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">sd</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">      </span><span class="c1">#normal distribution</span>
+<span class="nf">pnorm</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">sd</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">lower.tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">log.p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="nf">qnorm</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">sd</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">lower.tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">log.p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">sd</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
+
+
+<span class="nf">dunif</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">      </span><span class="c1">#uniform distribution</span>
+<span class="nf">punif</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">lower.tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">log.p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="nf">qunif</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">lower.tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">log.p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="nf">runif</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">min</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org5ec5082" class="outline-3">
+<h3 id="org5ec5082">Data Manipulation.</h3>
+<div class="outline-text-3" id="text-org5ec5082">
+<div class="highlight"><pre><span></span><span class="nf">replace</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">list</span><span class="p">,</span><span class="w"> </span><span class="n">values</span><span class="p">)</span><span class="w">                 </span><span class="c1">#remember to assign this to some object i.e., x &lt;- replace(x,x==-9,NA) </span>
+<span class="w">                                         </span><span class="c1">#similar to the operation x[x==-9] &lt;- NA</span>
+
+
+<span class="nf">cut</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">breaks</span><span class="p">,</span><span class="w"> </span><span class="n">labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">include.lowest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">dig.lab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">)</span>
+
+<span class="n">x.df</span><span class="o">=</span><span class="nf">data.frame</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">x3</span><span class="w"> </span><span class="kc">...</span><span class="p">)</span><span class="w">             </span><span class="c1">#combine different kinds of data into a data frame</span>
+<span class="w">        </span><span class="nf">as.data.frame</span><span class="p">()</span>
+<span class="w">        </span><span class="nf">is.data.frame</span><span class="p">()</span>
+<span class="n">x</span><span class="o">=</span><span class="nf">as.matrix</span><span class="p">()</span>
+<span class="nf">scale</span><span class="p">()</span><span class="w">                                   </span><span class="c1">#converts a data frame to standardized scores</span>
+
+<span class="nf">round</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="w">                                </span><span class="c1">#rounds the values of x to n decimal places</span>
+<span class="nf">ceiling</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">                                </span><span class="c1">#vector x of smallest integers &gt; x</span>
+<span class="nf">floor</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">                                  </span><span class="c1">#vector x of largest interger &lt; x</span>
+<span class="nf">as.integer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">                             </span><span class="c1">#truncates real x to integers (compare to round(x,0)</span>
+<span class="nf">as.integer</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">cutpoint</span><span class="p">)</span><span class="w">                  </span><span class="c1">#vector x of 0 if less than cutpoint, 1 if greater than cutpoint)</span>
+<span class="nf">factor</span><span class="p">(</span><span class="nf">ifelse</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">cutpoint</span><span class="p">,</span><span class="w"> </span><span class="s">"Neg"</span><span class="p">,</span><span class="w"> </span><span class="s">"Pos"</span><span class="p">))</span><span class="w">  </span><span class="c1">#is another way to dichotomize and to make a factor for analysis </span>
+<span class="nf">transform</span><span class="p">(</span><span class="n">data.df</span><span class="p">,</span><span class="n">variable</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">operation</span><span class="p">)</span><span class="w"> </span><span class="c1">#can be part of a set up for a data set </span>
+
+<span class="n">x</span><span class="o">%in%</span><span class="n">y</span><span class="w">                     </span><span class="c1">#tests each element of x for membership in y</span>
+<span class="n">y</span><span class="o">%in%</span><span class="n">x</span><span class="w">                     </span><span class="c1">#tests each element of y for membership in x</span>
+<span class="nf">all</span><span class="p">(</span><span class="n">x</span><span class="o">%in%</span><span class="n">y</span><span class="p">)</span><span class="w">                </span><span class="c1">#true if x is a proper subset of y</span>
+<span class="nf">all</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">                     </span><span class="c1"># for a vector of logical values, are they all true?</span>
+<span class="nf">any</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">                     </span><span class="c1">#for a vector of logical values, is at least one true?</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-orgd51c1f5" class="outline-3">
+<h3 id="orgd51c1f5">Statistics and Transformations.</h3>
+<div class="outline-text-3" id="text-orgd51c1f5">
+<div class="highlight"><pre><span></span><span class="nf">max</span><span class="p">()</span>
+<span class="nf">min</span><span class="p">()</span>
+<span class="nf">mean</span><span class="p">()</span>
+<span class="nf">median</span><span class="p">()</span>
+<span class="nf">sum</span><span class="p">()</span>
+<span class="nf">var</span><span class="p">()</span><span class="w">     </span><span class="c1">#produces the variance covariance matrix</span>
+<span class="nf">sd</span><span class="p">()</span><span class="w">      </span><span class="c1">#standard deviation</span>
+<span class="nf">mad</span><span class="p">()</span><span class="w">     </span><span class="c1">#(median absolute deviation)</span>
+<span class="nf">fivenum</span><span class="p">()</span><span class="w"> </span><span class="c1">#Tukey fivenumbers min, lowerhinge, median, upper hinge, max</span>
+<span class="nf">table</span><span class="p">()</span><span class="w">   </span><span class="c1">#frequency counts of entries, ideally the entries are factors(although it works with integers or even reals)</span>
+<span class="nf">scale</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="bp">T</span><span class="p">)</span><span class="w">   </span><span class="c1">#centers around the mean and scales by the sd)</span>
+<span class="nf">cumsum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">             </span><span class="c1">#cumulative sum, etc.</span>
+<span class="nf">cumprod</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nf">cummax</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nf">cummin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nf">rev</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">                </span><span class="c1">#reverse the order of values in x</span>
+
+<span class="nf">cor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">use</span><span class="o">=</span><span class="s">"pair"</span><span class="p">)</span><span class="w">   </span><span class="c1">#correlation matrix for pairwise complete data, use="complete" for complete cases</span>
+
+<span class="nf">aov</span><span class="p">(</span><span class="n">x</span><span class="o">~</span><span class="n">y</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">datafile</span><span class="p">)</span><span class="c1">#where x and y can be matrices</span>
+<span class="n">aov.ex1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">aov</span><span class="p">(</span><span class="n">DV</span><span class="o">~</span><span class="n">IV</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">data.ex1</span><span class="p">)</span><span class="w">  </span><span class="c1">#do the analysis of variance or</span>
+<span class="n">aov.ex2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">aov</span><span class="p">(</span><span class="n">DV</span><span class="o">~</span><span class="n">IV1</span><span class="o">*</span><span class="n">IV21</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">data.ex2</span><span class="p">)</span><span class="w">         </span><span class="c1">#do a two way analysis of variance</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">aov.ex1</span><span class="p">)</span><span class="w">                                 </span><span class="c1">#show the summary table</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">model.tables</span><span class="p">(</span><span class="n">aov.ex1</span><span class="p">,</span><span class="s">"means"</span><span class="p">),</span><span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">)</span><span class="w">    </span><span class="c1">#report the means and the number of subjects/cell</span>
+<span class="nf">boxplot</span><span class="p">(</span><span class="n">DV</span><span class="o">~</span><span class="n">IV</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">data.ex1</span><span class="p">)</span><span class="w">                     </span><span class="c1">#graphical summary appears in graphics window</span>
+<span class="nf">lm</span><span class="p">(</span><span class="n">x</span><span class="o">~</span><span class="n">y</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">dataset</span><span class="p">)</span><span class="w">                             </span><span class="c1">#basic linear model where x and y can be matrices  (see plot.lm for plotting options)</span>
+<span class="nf">t.test</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
+<span class="nf">pairwise.t.test</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
+<span class="nf">power.anova.test</span><span class="p">(</span><span class="n">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">between.var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span>
+<span class="w">                 </span><span class="n">within.var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">sig.level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.05</span><span class="p">,</span><span class="w"> </span><span class="n">power</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
+<span class="nf">power.t.test</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">sig.level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.05</span><span class="p">,</span>
+<span class="w">             </span><span class="n">power</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"two.sample"</span><span class="p">,</span><span class="w"> </span><span class="s">"one.sample"</span><span class="p">,</span><span class="w"> </span><span class="s">"paired"</span><span class="p">),</span>
+<span class="w">             </span><span class="n">alternative</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">"two.sided"</span><span class="p">,</span><span class="w"> </span><span class="s">"one.sided"</span><span class="p">),</span><span class="n">strict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org5dd7b42" class="outline-3">
+<h3 id="org5dd7b42">More Statistics: Regression and Linear Model</h3>
+<div class="outline-text-3" id="text-org5dd7b42">
+<div class="highlight"><pre><span></span><span class="n">matrices</span>
+<span class="nf">lm</span><span class="p">(</span><span class="n">Y</span><span class="o">~</span><span class="n">X1</span><span class="o">+</span><span class="n">X2</span><span class="p">)</span>
+<span class="nf">lm</span><span class="p">(</span><span class="n">Y</span><span class="o">~</span><span class="n">X</span><span class="o">|</span><span class="n">W</span><span class="p">)</span><span class="w">                              </span>
+<span class="nf">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">)</span><span class="w">            </span><span class="c1">#inverse of A * B   - used for linear regression</span>
+<span class="nf">solve</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w">              </span><span class="c1">#inverse of A</span>
+<span class="nf">factanal</span><span class="p">()</span>
+<span class="nf">princomp</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org50460a4" class="outline-3">
+<h3 id="org50460a4">Useful Additional Commands.</h3>
+<div class="outline-text-3" id="text-org50460a4">
+<div class="highlight"><pre><span></span><span class="nf">colSums </span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">dims</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
+<span class="w">     </span><span class="nf">rowSums </span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">dims</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
+<span class="w">     </span><span class="nf">colMeans</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">dims</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
+<span class="w">     </span><span class="nf">rowMeans</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">dims</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
+<span class="w">     </span><span class="nf">rowsum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">group</span><span class="p">,</span><span class="w"> </span><span class="n">reorder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">)</span><span class="w">         </span><span class="c1">#finds row sums for each level of a grouping variable</span>
+<span class="w">     </span><span class="nf">apply</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">MARGIN</span><span class="p">,</span><span class="w"> </span><span class="n">FUN</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">)</span><span class="w">                    </span><span class="c1">#applies the function (FUN) to either rows (1) or columns (2) on object X</span>
+<span class="w">        </span><span class="nf">apply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="n">min</span><span class="p">)</span><span class="w">                             </span><span class="c1">#finds the minimum for each row</span>
+<span class="w">        </span><span class="nf">apply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="n">max</span><span class="p">)</span><span class="w">                             </span><span class="c1">#finds the maximum for each column</span>
+<span class="w">    </span><span class="nf">col.max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">                                     </span><span class="c1">#another way to find which column has the maximum value for each row </span>
+<span class="w">    </span><span class="nf">which.min</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="w">    </span><span class="nf">which.max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="w">        </span><span class="n">z</span><span class="o">=</span><span class="nf">apply</span><span class="p">(</span><span class="n">big5r</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="n">which.min</span><span class="p">)</span><span class="w">                 </span><span class="c1">#tells the row with the minimum value for every column</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org8ef9e3c" class="outline-3">
+<h3 id="org8ef9e3c">Graphics.</h3>
+<div class="outline-text-3" id="text-org8ef9e3c">
+<div class="highlight"><pre><span></span><span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="n">nrow</span><span class="p">,</span><span class="n">mcol</span><span class="p">))</span><span class="w">                   </span><span class="c1">#number of rows and columns to graph</span>
+<span class="nf">par</span><span class="p">(</span><span class="n">ask</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span><span class="w">                             </span><span class="c1">#ask for user input before drawing a new graph</span>
+<span class="nf">par</span><span class="p">(</span><span class="n">omi</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">                      </span><span class="c1">#set the size of the outer margins </span>
+<span class="nf">mtext</span><span class="p">(</span><span class="s">"some global title"</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="n">outer</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span><span class="n">line</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">cex</span><span class="o">=</span><span class="m">1.5</span><span class="p">)</span><span class="w">    </span><span class="c1">#note that we seem to need to add the global title last</span>
+<span class="w">                     </span><span class="c1">#cex = character expansion factor </span>
+
+<span class="nf">boxplot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">main</span><span class="o">=</span><span class="s">"title"</span><span class="p">)</span><span class="w">                   </span><span class="c1">#boxplot (box and whiskers)</span>
+
+
+<span class="nf">title</span><span class="p">(</span><span class="w"> </span><span class="s">"some title"</span><span class="p">)</span><span class="w">                      </span><span class="c1">#add a title to the first graph</span>
+
+
+<span class="nf">hist</span><span class="p">()</span><span class="w">                                   </span><span class="c1">#histogram</span>
+<span class="nf">plot</span><span class="p">()</span>
+<span class="w">        </span><span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">xlim</span><span class="o">=</span><span class="nf">range</span><span class="p">(</span><span class="m">-1</span><span class="p">,</span><span class="m">1</span><span class="p">),</span><span class="n">ylim</span><span class="o">=</span><span class="nf">range</span><span class="p">(</span><span class="m">-1</span><span class="p">,</span><span class="m">1</span><span class="p">),</span><span class="n">main</span><span class="o">=</span><span class="n">title</span><span class="p">)</span>
+<span class="w">        </span><span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">))</span><span class="w">     </span><span class="c1">#change the graph window back to one figure</span>
+<span class="w">        </span><span class="n">symb</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">19</span><span class="p">,</span><span class="m">25</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">23</span><span class="p">)</span>
+<span class="w">        </span><span class="n">colors</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">"black"</span><span class="p">,</span><span class="s">"red"</span><span class="p">,</span><span class="s">"green"</span><span class="p">,</span><span class="s">"blue"</span><span class="p">)</span>
+<span class="w">        </span><span class="n">charact</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">"S"</span><span class="p">,</span><span class="s">"T"</span><span class="p">,</span><span class="s">"N"</span><span class="p">,</span><span class="s">"H"</span><span class="p">)</span>
+<span class="w">        </span><span class="nf">plot</span><span class="p">(</span><span class="n">PA</span><span class="p">,</span><span class="n">NAF</span><span class="p">,</span><span class="n">pch</span><span class="o">=</span><span class="n">symb</span><span class="p">[</span><span class="n">group</span><span class="p">],</span><span class="n">col</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">group</span><span class="p">],</span><span class="n">bg</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">condit</span><span class="p">],</span><span class="n">cex</span><span class="o">=</span><span class="m">1.5</span><span class="p">,</span><span class="n">main</span><span class="o">=</span><span class="s">"Postive vs. Negative Affect by Film condition"</span><span class="p">)</span>
+<span class="w">        </span><span class="nf">points</span><span class="p">(</span><span class="n">mPA</span><span class="p">,</span><span class="n">mNA</span><span class="p">,</span><span class="n">pch</span><span class="o">=</span><span class="n">symb</span><span class="p">[</span><span class="n">condit</span><span class="p">],</span><span class="n">cex</span><span class="o">=</span><span class="m">4.5</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">condit</span><span class="p">],</span><span class="n">bg</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">condit</span><span class="p">])</span>
+
+<span class="nf">curve</span><span class="p">()</span>
+<span class="nf">abline</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="w">         </span><span class="nf">abline</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">untf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">)</span>
+<span class="w">     </span><span class="nf">abline</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="p">,</span><span class="w"> </span><span class="n">untf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">)</span>
+<span class="w">     </span><span class="nf">abline</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="p">,</span><span class="w"> </span><span class="n">untf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">)</span>
+<span class="w">     </span><span class="nf">abline</span><span class="p">(</span><span class="n">coef</span><span class="o">=</span><span class="p">,</span><span class="w"> </span><span class="n">untf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">)</span>
+<span class="w">     </span><span class="nf">abline</span><span class="p">(</span><span class="n">reg</span><span class="o">=</span><span class="p">,</span><span class="w"> </span><span class="n">untf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">)</span>
+
+<span class="nf">identify</span><span class="p">()</span>
+<span class="w">        </span><span class="nf">plot</span><span class="p">(</span><span class="n">eatar</span><span class="p">,</span><span class="n">eanta</span><span class="p">,</span><span class="n">xlim</span><span class="o">=</span><span class="nf">range</span><span class="p">(</span><span class="m">-1</span><span class="p">,</span><span class="m">1</span><span class="p">),</span><span class="n">ylim</span><span class="o">=</span><span class="nf">range</span><span class="p">(</span><span class="m">-1</span><span class="p">,</span><span class="m">1</span><span class="p">),</span><span class="n">main</span><span class="o">=</span><span class="n">title</span><span class="p">)</span>
+<span class="w">        </span><span class="nf">identify</span><span class="p">(</span><span class="n">eatar</span><span class="p">,</span><span class="n">eanta</span><span class="p">,</span><span class="n">labels</span><span class="o">=</span><span class="nf">labels</span><span class="p">(</span><span class="n">energysR</span><span class="p">[,</span><span class="m">1</span><span class="p">])</span><span class="w">  </span><span class="p">)</span><span class="w">       </span><span class="c1">#dynamically puts names on the plots</span>
+<span class="nf">locate</span><span class="p">()</span>
+
+<span class="nf">legend</span><span class="p">()</span>
+<span class="nf">pairs</span><span class="p">()</span><span class="w">                                  </span><span class="c1">#SPLOM (scatter plot Matrix)</span>
+<span class="nf">pairs.panels </span><span class="p">()</span><span class="w">    </span><span class="c1">#SPLOM on lower off diagonal, histograms on diagonal, correlations on diagonal</span>
+<span class="w">                   </span><span class="c1">#not standard R, but uses a function found in useful.r </span>
+<span class="nf">matplot </span><span class="p">()</span>
+<span class="nf">biplot </span><span class="p">())</span>
+<span class="nf">plot</span><span class="p">(</span><span class="nf">table</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="w">                           </span><span class="c1">#plot the frequencies of levels in x</span>
+
+<span class="n">x</span><span class="o">=</span><span class="w"> </span><span class="nf">recordPlot</span><span class="p">()</span><span class="w">                          </span><span class="c1">#save the current plot device output in the object x</span>
+<span class="nf">replayPlot</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">                            </span><span class="c1">#replot object x</span>
+<span class="n">dev.control</span><span class="w">                              </span><span class="c1">#various control functions for printing/saving graphic files</span>
+<span class="nf">pdf</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="o">=</span><span class="m">6</span><span class="p">)</span><span class="w">              </span><span class="c1">#create a pdf file for output</span>
+<span class="nf">dev.of</span><span class="p">()</span><span class="w">                            </span><span class="c1">#close the pdf file created with pdf </span>
+<span class="nf">layout</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span><span class="w">                         </span><span class="c1">#specify where multiple graphs go on the page</span>
+<span class="w">                                    </span><span class="c1">#experiment with the magic code from Paul Murrell to do fancy graphic location</span>
+<span class="nf">layout</span><span class="p">(</span><span class="nf">rbind</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">),</span>
+<span class="w">             </span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">)))</span><span class="w">   </span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">plot</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="o">=</span><span class="s">"n"</span><span class="p">)</span>
+<span class="w">  </span><span class="nf">text</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="s">"Plot"</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">cex</span><span class="o">=</span><span class="m">4</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org4cd13e6" class="outline-3">
+<h3 id="org4cd13e6">Distributions.</h3>
+<div class="outline-text-3" id="text-org4cd13e6">
+<p>
+To generate random samples from a variety of distributions.
+</p>
+<div class="highlight"><pre><span></span><span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">mean</span><span class="p">,</span><span class="n">sd</span><span class="p">)</span>
+<span class="nf">rbinom</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">size</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
+<span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">prob</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span><span class="w">      </span><span class="c1">#samples with or without replacement</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org7ee4ab4" class="outline-3">
+<h3 id="org7ee4ab4">Working with Dates.</h3>
+<div class="outline-text-3" id="text-org7ee4ab4">
+<div class="highlight"><pre><span></span><span class="n">date</span><span class="w"> </span><span class="o">&lt;-</span><span class="nf">strptime</span><span class="p">(</span><span class="nf">as.character</span><span class="p">(</span><span class="n">date</span><span class="p">),</span><span class="w"> </span><span class="s">"%m/%d/%y"</span><span class="p">)</span><span class="w">   </span><span class="c1">#change the date field to a internal form for time  </span>
+<span class="w">                                                  </span><span class="c1">#see ?formats and ?POSIXlt  </span>
+<span class="w"> </span><span class="n">as.Date</span>
+<span class="w"> </span><span class="n">month</span><span class="o">=</span><span class="w"> </span><span class="nf">months</span><span class="p">(</span><span class="n">date</span><span class="p">)</span><span class="w">                              </span><span class="c1">#see also weekdays, Julian</span>
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-org841f8d0" class="outline-3">
+<h3 id="org841f8d0">And More…</h3>
+<div class="outline-text-3" id="text-org841f8d0">
+<p>
+<a href="https://personality-project.org/r/r.useful.html">Additional functions</a> created by W. Revelle because, as stated, he needed some specific operation may be included in the workspace by issuing the source command:
+</p>
+<ul class="org-ul">
+<li>source <a href="http://personality-project.org/r/useful.r">http://personality-project.org/r/useful.r</a>
+</li>
+</ul>
+<p>
+These functions include:
+</p>
+<div class="highlight"><pre><span></span><span class="c1">#alpha.scale     #find coefficient alpha for a scale and a dataframe of items</span>
+<span class="c1">#describe        give means, sd, skew, n, and se </span>
+<span class="c1">#summ.stats      #basic summary statistics by a grouping variable</span>
+<span class="c1">#error.crosses   #(error bars in two space)</span>
+<span class="c1">#skew            find skew</span>
+<span class="c1">#panel.cor       taken from the examples for pairs</span>
+<span class="c1">#pairs.panels    adapted from panel.cor  --   gives a splom, histogram, and correlation matrix</span>
+<span class="c1">#multi.hist      #plot multiple histograms</span>
+<span class="c1">#correct.cor     #given a correlation matrix and a vector of reliabilities, correct for reliability</span>
+<span class="c1">#fisherz         #convert pearson r to fisher z</span>
+<span class="c1">#paired.r        #test for difference of dependent correlations</span>
+<span class="c1">#count.pairwise  #count the number of good cases when doing pairwise analysis</span>
+<span class="c1">#eigen.loadings  #convert eigen vector vectors to factor loadings by unnormalizing them</span>
+<span class="c1">#principal       #yet another way to do a principal components analysis -- brute force eignvalue decomp </span>
+<span class="c1">#factor.congruence #find the factor congruence coeffiecints</span>
+<span class="c1">#factor.model      #given a factor model, find the correlation matrix</span>
+<span class="c1">#factor.residuals  #how well does it fit?</span>
+<span class="c1">#factor.rotate     # rotate two columns of a factor matrix by theta (in degrees)</span>
+<span class="c1">#phi2poly          #convert a matrix of phi coefficients to polychoric correlations</span>
+</pre></div>
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><div class="pager hidden-print pagination">
+
+            <span class="previous pagination-item older">
+                <a href="../7-de-julio-1932/" rel="prev" title="7 de Julio, 1932">
+                Previous post
+                </a>
+            </span>
+
+
+            <span class="next pagination-item newer">
+                <a href="../customizing-code-listings-in-org-mode-latex/" rel="next" title="Customizing Code-listings In OrgMode Latex">
+Next post
+              </a>
+            </span>
+
+        </div>
+
+    </nav></aside></article>
+</div>
+            <script src="../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

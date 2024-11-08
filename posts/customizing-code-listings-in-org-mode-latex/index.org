@@ -149,3 +149,6 @@ print("Hello, World!")
 \#+END_SRC
 
 #+end_src
+
+And here is a screenshot to give the reader an idea of what it looks like. 
+[[img-url:/images/my_listing_latex_post.png]]

@@ -80,7 +80,7 @@ This allows me to specify various options for code formatting, here a tested exa
 I load this settings document in my **Org** file using the =LATEX_HEADER= directive. This allowed me to apply all the options defined in mystyle to my document.
 #+ATTR_LATEX: :options basicstyle=\tiny\ttfamily\Inconsolata
 #+begin_src org
-#+LATEX_HEADER: \input{~/.emacs.d/customizations/settings.tex}
+#+LATEX_HEADER: \input{~/path-to/settings.tex}
 #+end_src
 
 ** Explicitly Set Options:
@@ -143,7 +143,7 @@ Here's a minimal example of how your Org file might look whit these settings.
 #+LaTeX_CLASS_OPTIONS: [a4paper, 11pt]
 #+LATEX_HEADER: \usepackage[a4paper, total={6in, 8in}]{geometry}
 #+OPTIONS: toc:nil
-#+LATEX_HEADER: \input{~/.emacs.d/customizations/setup-syl-short-report.tex}
+#+LATEX_HEADER: \input{~/path-to/settings.tex}
 #+BEGIN_SRC python 
 print("Hello, World!")
 \#+END_SRC

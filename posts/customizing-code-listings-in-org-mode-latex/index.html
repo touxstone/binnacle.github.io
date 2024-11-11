@@ -62,34 +62,34 @@ In my recent exploration of <b><b>Org-mode</b></b> and LaTeX, I encountered a li
 </p>
 <script src="https://liberapay.com/Sylv./widgets/button.js"></script><noscript><a href="https://liberapay.com/Sylv./donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
 <!-- TEASER_END -->
-<div id="outline-container-orgea1368e" class="outline-2">
-<h2 id="orgea1368e">The Problem</h2>
-<div class="outline-text-2" id="text-orgea1368e">
+<div id="outline-container-org204c46e" class="outline-2">
+<h2 id="org204c46e">The Problem</h2>
+<div class="outline-text-2" id="text-org204c46e">
 <p>
 While working with the listings package in LaTeX, I found that the <code>org-latex-listings-options</code> variable only accepts a limited set of parameters. Specifically, I wanted to include additional styling preferences for my code blocks, but I was constrained by the predefined keys.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgd2eef6f" class="outline-2">
-<h2 id="orgd2eef6f">The Workaround</h2>
-<div class="outline-text-2" id="text-orgd2eef6f">
+<div id="outline-container-org3303083" class="outline-2">
+<h2 id="org3303083">The Workaround</h2>
+<div class="outline-text-2" id="text-org3303083">
 <p>
 To overcome this limitation, I utilized one of the label key in a way that was not documented. Here’s how I did it:
 </p>
 </div>
 
-<div id="outline-container-orgf9155cc" class="outline-3">
-<h3 id="orgf9155cc">My ORG environment:</h3>
-<div class="outline-text-3" id="text-orgf9155cc">
+<div id="outline-container-orgc5af339" class="outline-3">
+<h3 id="orgc5af339">My ORG environment:</h3>
+<div class="outline-text-3" id="text-orgc5af339">
 <div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">org-latex-listings</span><span class="w"> </span><span class="ss">'t</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 
-<div id="outline-container-org327ee0e" class="outline-3">
-<h3 id="org327ee0e">Define a Custom Style:</h3>
-<div class="outline-text-3" id="text-org327ee0e">
+<div id="outline-container-orgd23adfb" class="outline-3">
+<h3 id="orgd23adfb">Define a Custom Style:</h3>
+<div class="outline-text-3" id="text-orgd23adfb">
 <p>
 In a separate <code>'.tex'</code> file, I defined my custom style using:
 </p>
@@ -138,20 +138,20 @@ This allows me to specify various options for code formatting, here a tested exa
 </div>
 </div>
 
-<div id="outline-container-org98d5d2a" class="outline-3">
-<h3 id="org98d5d2a">Load the Settings Document:</h3>
-<div class="outline-text-3" id="text-org98d5d2a">
+<div id="outline-container-org822bb11" class="outline-3">
+<h3 id="org822bb11">Load the Settings Document:</h3>
+<div class="outline-text-3" id="text-org822bb11">
 <p>
 I load this settings document in my <b><b>Org</b></b> file using the <code>LATEX_HEADER</code> directive. This allowed me to apply all the options defined in mystyle to my document.
 </p>
-<div class="highlight"><pre><span></span>#+LATEX_HEADER: \input{~/.emacs.d/customizations/settings.tex}
+<div class="highlight"><pre><span></span>#+LATEX_HEADER: \input{~/path-to/settings.tex}
 </pre></div>
 </div>
 </div>
 
-<div id="outline-container-org9c25fbf" class="outline-3">
-<h3 id="org9c25fbf">Explicitly Set Options:</h3>
-<div class="outline-text-3" id="text-org9c25fbf">
+<div id="outline-container-org3dd868c" class="outline-3">
+<h3 id="org3dd868c">Explicitly Set Options:</h3>
+<div class="outline-text-3" id="text-org3dd868c">
 <p>
 Despite this workaround, I found that some options, such as <code>numbers</code> and <code>numberstyle</code>, were ignored when defined in the custom style. To ensure these options were applied, I explicitly added them to the <b><b>org-latex-listings-options</b></b> variable in my <b><b>Emacs</b></b> configuration:
 </p>
@@ -165,9 +165,9 @@ Despite this workaround, I found that some options, such as <code>numbers</code>
 </div>
 
 
-<div id="outline-container-org07c384c" class="outline-4">
-<h4 id="org07c384c">Documentation Reference.</h4>
-<div class="outline-text-4" id="text-org07c384c">
+<div id="outline-container-org2f4cfde" class="outline-4">
+<h4 id="org2f4cfde">Documentation Reference.</h4>
+<div class="outline-text-4" id="text-org2f4cfde">
 <p>
 I did the above following documentation found by typing in <code>EMACS</code>: <br><code>C-h v</code> <code>RET</code> <code>org-latex-listings-options</code> <code>RET</code> 
 </p>
@@ -205,9 +205,9 @@ I did the above following documentation found by typing in <code>EMACS</code>: <
 </div>
 </div>
 </div>
-<div id="outline-container-org12a7f20" class="outline-2">
-<h2 id="org12a7f20">Example Org File</h2>
-<div class="outline-text-2" id="text-org12a7f20">
+<div id="outline-container-org3522e52" class="outline-2">
+<h2 id="org3522e52">Example Org File</h2>
+<div class="outline-text-2" id="text-org3522e52">
 <p>
 Here's a minimal example of how your Org file might look whit these settings.
 </p>
@@ -218,7 +218,7 @@ Here's a minimal example of how your Org file might look whit these settings.
 #+LaTeX_CLASS_OPTIONS: [a4paper, 11pt]
 #+LATEX_HEADER: \usepackage[a4paper, total={6in, 8in}]{geometry}
 #+OPTIONS: toc:nil
-#+LATEX_HEADER: \input{~/.emacs.d/customizations/setup-syl-short-report.tex}
+#+LATEX_HEADER: \input{~/path-to/settings.tex}
 #+BEGIN_SRC python 
 print("Hello, World!")
 \#+END_SRC

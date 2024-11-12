@@ -11,14 +11,14 @@
 #+END_COMMENT
 
 
-In my recent exploration of **Org-mode** and LaTeX, I encountered a limitation with the =org-latex-listings-options= variable, which restricts the customization of code listings. However, I discovered a workaround that allows for greater flexibility in styling code blocks. I wanted to share this solution, as it may help others facing the same challenges.
+In my recent exploration of [[https://orgmode.org/orgguide.html#LaTeX-Export][Org-mode]] and LaTeX, I encountered a limitation with the =org-latex-listings-options= variable, which restricts the customization of code [[https://www.overleaf.com/learn/latex/Code_listing][listings]]. However, I discovered a workaround that allows for greater flexibility in styling code blocks. I wanted to share this solution, as it may help others facing the same challenges.
 #+begin_export html
 <script src="https://liberapay.com/Sylv./widgets/button.js"></script>
 <noscript><a href="https://liberapay.com/Sylv./donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
 #+end_export
 {{{TEASER_END}}}
 * The Problem
-While working with the listings package in LaTeX, I found that the =org-latex-listings-options= variable only accepts a limited set of parameters. Specifically, I wanted to include additional styling preferences for my code blocks, but I was constrained by the predefined keys.
+While working with the =listings= package in LaTeX, I found that the =org-latex-listings-options= variable only accepts a limited set of parameters. Specifically, I wanted to include additional styling preferences for my code blocks, but I was constrained by the predefined keys.
 
 * The Workaround
 To overcome this limitation, I utilized one of the label key in a way that was not documented. Here’s how I did it:
@@ -77,14 +77,14 @@ This allows me to specify various options for code formatting, here a tested exa
 #+end_src 
 
 ** Load the Settings Document:
-I load this settings document in my **Org** file using the =LATEX_HEADER= directive. This allowed me to apply all the options defined in mystyle to my document.
+I load this settings document in my =Org= file using the =LATEX_HEADER= directive. This allowed me to apply all the options defined in mystyle to my document.
 #+ATTR_LATEX: :options basicstyle=\tiny\ttfamily\Inconsolata
 #+begin_src org
 #+LATEX_HEADER: \input{~/path-to/settings.tex}
 #+end_src
 
 ** Explicitly Set Options:
-Despite this workaround, I found that some options, such as =numbers= and =numberstyle=, were ignored when defined in the custom style. To ensure these options were applied, I explicitly added them to the **org-latex-listings-options** variable in my **Emacs** configuration:
+Despite this workaround, I found that some options, such as =numbers= and =numberstyle=, were ignored when defined in the custom style. To ensure these options were applied, I explicitly added them to the =org-latex-listings-options= variable in my =Emacs= configuration:
 #+CAPTION: Notice I also included my =style=mystyle= pair as seen in line 4 above. 
 #+ATTR_LATEX: :options basicstyle=\tiny\ttfamily\Inconsolata
 #+begin_src emacs-lisp

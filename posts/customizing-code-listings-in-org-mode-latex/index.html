@@ -58,38 +58,38 @@
 
     <div class="e-content entry-content" itemprop="articleBody text">
     <p>
-In my recent exploration of <b><b>Org-mode</b></b> and LaTeX, I encountered a limitation with the <code>org-latex-listings-options</code> variable, which restricts the customization of code listings. However, I discovered a workaround that allows for greater flexibility in styling code blocks. I wanted to share this solution, as it may help others facing the same challenges.
+In my recent exploration of <a href="https://orgmode.org/orgguide.html#LaTeX-Export">Org-mode</a> and LaTeX, I encountered a limitation with the <code>org-latex-listings-options</code> variable, which restricts the customization of code <a href="https://www.overleaf.com/learn/latex/Code_listing">listings</a>. However, I discovered a workaround that allows for greater flexibility in styling code blocks. I wanted to share this solution, as it may help others facing the same challenges.
 </p>
 <script src="https://liberapay.com/Sylv./widgets/button.js"></script><noscript><a href="https://liberapay.com/Sylv./donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
 <!-- TEASER_END -->
-<div id="outline-container-org204c46e" class="outline-2">
-<h2 id="org204c46e">The Problem</h2>
-<div class="outline-text-2" id="text-org204c46e">
+<div id="outline-container-orga3b3d00" class="outline-2">
+<h2 id="orga3b3d00">The Problem</h2>
+<div class="outline-text-2" id="text-orga3b3d00">
 <p>
-While working with the listings package in LaTeX, I found that the <code>org-latex-listings-options</code> variable only accepts a limited set of parameters. Specifically, I wanted to include additional styling preferences for my code blocks, but I was constrained by the predefined keys.
+While working with the <code>listings</code> package in LaTeX, I found that the <code>org-latex-listings-options</code> variable only accepts a limited set of parameters. Specifically, I wanted to include additional styling preferences for my code blocks, but I was constrained by the predefined keys.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org3303083" class="outline-2">
-<h2 id="org3303083">The Workaround</h2>
-<div class="outline-text-2" id="text-org3303083">
+<div id="outline-container-org349b2cd" class="outline-2">
+<h2 id="org349b2cd">The Workaround</h2>
+<div class="outline-text-2" id="text-org349b2cd">
 <p>
 To overcome this limitation, I utilized one of the label key in a way that was not documented. Here’s how I did it:
 </p>
 </div>
 
-<div id="outline-container-orgc5af339" class="outline-3">
-<h3 id="orgc5af339">My ORG environment:</h3>
-<div class="outline-text-3" id="text-orgc5af339">
+<div id="outline-container-org6f05cc7" class="outline-3">
+<h3 id="org6f05cc7">My ORG environment:</h3>
+<div class="outline-text-3" id="text-org6f05cc7">
 <div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">org-latex-listings</span><span class="w"> </span><span class="ss">'t</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 
-<div id="outline-container-orgd23adfb" class="outline-3">
-<h3 id="orgd23adfb">Define a Custom Style:</h3>
-<div class="outline-text-3" id="text-orgd23adfb">
+<div id="outline-container-orga3dc500" class="outline-3">
+<h3 id="orga3dc500">Define a Custom Style:</h3>
+<div class="outline-text-3" id="text-orga3dc500">
 <p>
 In a separate <code>'.tex'</code> file, I defined my custom style using:
 </p>
@@ -138,22 +138,22 @@ This allows me to specify various options for code formatting, here a tested exa
 </div>
 </div>
 
-<div id="outline-container-org822bb11" class="outline-3">
-<h3 id="org822bb11">Load the Settings Document:</h3>
-<div class="outline-text-3" id="text-org822bb11">
+<div id="outline-container-org176323b" class="outline-3">
+<h3 id="org176323b">Load the Settings Document:</h3>
+<div class="outline-text-3" id="text-org176323b">
 <p>
-I load this settings document in my <b><b>Org</b></b> file using the <code>LATEX_HEADER</code> directive. This allowed me to apply all the options defined in mystyle to my document.
+I load this settings document in my <code>Org</code> file using the <code>LATEX_HEADER</code> directive. This allowed me to apply all the options defined in mystyle to my document.
 </p>
 <div class="highlight"><pre><span></span>#+LATEX_HEADER: \input{~/path-to/settings.tex}
 </pre></div>
 </div>
 </div>
 
-<div id="outline-container-org3dd868c" class="outline-3">
-<h3 id="org3dd868c">Explicitly Set Options:</h3>
-<div class="outline-text-3" id="text-org3dd868c">
+<div id="outline-container-org170ef9f" class="outline-3">
+<h3 id="org170ef9f">Explicitly Set Options:</h3>
+<div class="outline-text-3" id="text-org170ef9f">
 <p>
-Despite this workaround, I found that some options, such as <code>numbers</code> and <code>numberstyle</code>, were ignored when defined in the custom style. To ensure these options were applied, I explicitly added them to the <b><b>org-latex-listings-options</b></b> variable in my <b><b>Emacs</b></b> configuration:
+Despite this workaround, I found that some options, such as <code>numbers</code> and <code>numberstyle</code>, were ignored when defined in the custom style. To ensure these options were applied, I explicitly added them to the <code>org-latex-listings-options</code> variable in my <code>Emacs</code> configuration:
 </p>
 <div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">org-latex-listings</span><span class="w"> </span><span class="ss">'t</span><span class="p">)</span>
 <span class="p">(</span><span class="nf">setq</span><span class="w"> </span><span class="nv">org-latex-listings-options</span>
@@ -165,9 +165,9 @@ Despite this workaround, I found that some options, such as <code>numbers</code>
 </div>
 
 
-<div id="outline-container-org2f4cfde" class="outline-4">
-<h4 id="org2f4cfde">Documentation Reference.</h4>
-<div class="outline-text-4" id="text-org2f4cfde">
+<div id="outline-container-org0e2cb0c" class="outline-4">
+<h4 id="org0e2cb0c">Documentation Reference.</h4>
+<div class="outline-text-4" id="text-org0e2cb0c">
 <p>
 I did the above following documentation found by typing in <code>EMACS</code>: <br><code>C-h v</code> <code>RET</code> <code>org-latex-listings-options</code> <code>RET</code> 
 </p>
@@ -205,9 +205,9 @@ I did the above following documentation found by typing in <code>EMACS</code>: <
 </div>
 </div>
 </div>
-<div id="outline-container-org3522e52" class="outline-2">
-<h2 id="org3522e52">Example Org File</h2>
-<div class="outline-text-2" id="text-org3522e52">
+<div id="outline-container-org779868d" class="outline-2">
+<h2 id="org779868d">Example Org File</h2>
+<div class="outline-text-2" id="text-org779868d">
 <p>
 Here's a minimal example of how your Org file might look whit these settings.
 </p>
